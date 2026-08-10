@@ -32,7 +32,7 @@ export default function LightboxModal({ project, projects, onClose, onPrev, onNe
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="absolute inset-0 bg-[#080808]/95 backdrop-blur-2xl"
+          className="absolute inset-0 bg-slate-950/85 backdrop-blur-2xl"
         />
 
         {/* Modal Window Container */}
@@ -41,19 +41,19 @@ export default function LightboxModal({ project, projects, onClose, onPrev, onNe
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.3 }}
-          className="relative z-10 w-full max-w-5xl bg-[#171717] rounded-3xl border border-[#C9A45C]/40 shadow-2xl overflow-hidden flex flex-col lg:flex-row max-h-[90vh]"
+          className="relative z-10 w-full max-w-5xl bg-white rounded-3xl border border-[#D4AF37]/40 shadow-2xl overflow-hidden flex flex-col lg:flex-row max-h-[90vh]"
         >
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-20 p-3 rounded-full bg-[#080808]/80 text-gray-300 hover:text-white border border-[#262626] hover:border-[#C9A45C] transition-colors focus:outline-none"
+            className="absolute top-4 right-4 z-20 p-3 rounded-full bg-white/90 text-slate-700 hover:text-slate-900 border border-slate-200 hover:border-[#D4AF37] transition-colors focus:outline-none shadow-md"
             aria-label="Close Lightbox"
           >
             <X className="w-5 h-5" />
           </button>
 
           {/* Left Column: Image Viewer */}
-          <div className="relative lg:w-3/5 bg-black flex items-center justify-center min-h-[250px] lg:min-h-[500px]">
+          <div className="relative lg:w-3/5 bg-slate-950 flex items-center justify-center min-h-[250px] lg:min-h-[500px]">
             <img
               src={getImageUrl(project.image)}
               alt={project.title}
@@ -63,7 +63,7 @@ export default function LightboxModal({ project, projects, onClose, onPrev, onNe
             {/* Previous Button */}
             <button
               onClick={onPrev}
-              className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-[#080808]/80 text-gray-200 hover:text-[#E6C982] border border-[#262626] hover:border-[#C9A45C] transition-colors"
+              className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/90 text-slate-800 hover:text-[#B48608] border border-slate-200 hover:border-[#D4AF37] transition-colors shadow-md"
               aria-label="Previous Project"
             >
               <ChevronLeft className="w-6 h-6" />
@@ -72,7 +72,7 @@ export default function LightboxModal({ project, projects, onClose, onPrev, onNe
             {/* Next Button */}
             <button
               onClick={onNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-[#080808]/80 text-gray-200 hover:text-[#E6C982] border border-[#262626] hover:border-[#C9A45C] transition-colors"
+              className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/90 text-slate-800 hover:text-[#B48608] border border-slate-200 hover:border-[#D4AF37] transition-colors shadow-md"
               aria-label="Next Project"
             >
               <ChevronRight className="w-6 h-6" />
@@ -80,41 +80,41 @@ export default function LightboxModal({ project, projects, onClose, onPrev, onNe
 
             {/* Client Badge if real photo */}
             {project.isClientPhoto && (
-              <div className="absolute bottom-4 left-4 px-3 py-1.5 rounded-full bg-[#111111]/90 border border-[#C9A45C]/50 text-[11px] font-bold text-[#E6C982] tracking-wider uppercase flex items-center gap-1.5">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#C9A45C]" /> Real Client Showroom Photo
+              <div className="absolute bottom-4 left-4 px-3 py-1.5 rounded-full bg-white/95 border border-[#D4AF37] text-[11px] font-bold text-[#B48608] tracking-wider uppercase flex items-center gap-1.5 shadow-md">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#B48608]" /> Real Client Showroom Photo
               </div>
             )}
           </div>
 
           {/* Right Column: Details */}
-          <div className="lg:w-2/5 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto bg-[#171717]">
+          <div className="lg:w-2/5 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto bg-white">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <span className="px-3 py-1 rounded-full bg-[#111111] border border-[#C9A45C]/30 text-xs font-bold text-[#C9A45C] tracking-wider uppercase flex items-center gap-1">
+                <span className="px-3 py-1 rounded-full bg-amber-50 border border-amber-300 text-xs font-bold text-[#B48608] tracking-wider uppercase flex items-center gap-1">
                   <Tag className="w-3.5 h-3.5" /> {project.category}
                 </span>
               </div>
 
-              <h3 className="font-display font-bold text-2xl text-white mb-4 leading-snug">
+              <h3 className="font-display font-bold text-2xl text-slate-900 mb-4 leading-snug">
                 {project.title}
               </h3>
 
-              <div className="flex items-center gap-2 text-xs text-gray-400 mb-6 pb-4 border-b border-[#262626]">
-                <MapPin className="w-4 h-4 text-[#C9A45C]" />
+              <div className="flex items-center gap-2 text-xs text-slate-500 mb-6 pb-4 border-b border-slate-100">
+                <MapPin className="w-4 h-4 text-[#B48608]" />
                 <span>{project.location}</span>
               </div>
 
-              <p className="text-sm text-gray-300 font-light leading-relaxed mb-6">
+              <p className="text-sm text-slate-600 font-normal leading-relaxed mb-6">
                 {project.details}
               </p>
             </div>
 
-            <div className="pt-6 border-t border-[#262626]">
+            <div className="pt-6 border-t border-slate-100">
               <a
                 href={`https://wa.me/919087368191?text=${encodeURIComponent(`Hi SUN Mats Works, I am interested in this project: ${project.title} (${project.category}). Please provide pricing details.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-[#E6C982] via-[#C9A45C] to-[#9A7B39] text-black font-display font-bold text-xs tracking-wider uppercase text-center block shadow-gold-glow hover:shadow-gold-glow-lg transition-all"
+                className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-[#F5D77F] via-[#D4AF37] to-[#B48608] text-slate-950 font-display font-bold text-xs tracking-wider uppercase text-center block shadow-gold-glow hover:shadow-gold-glow-lg transition-all"
               >
                 Inquire About This Project
               </a>

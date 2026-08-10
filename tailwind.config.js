@@ -8,25 +8,26 @@ export default {
     extend: {
       colors: {
         bg: {
-          dark: "#050505",
-          card: "#121212",
-          subtle: "#0D0D0D",
-          elevated: "#1A1A1A",
+          dark: "#F8FAFC",
+          light: "#F8FAFC",
+          card: "#FFFFFF",
+          subtle: "#F1F5F9",
+          elevated: "#FFFFFF",
         },
         gold: {
           DEFAULT: "#D4AF37",
           light: "#F5D77F",
-          dark: "#AA8222",
+          dark: "#B48608",
           glow: "rgba(212, 175, 55, 0.25)",
         },
         border: {
-          subtle: "#222222",
-          gold: "rgba(212, 175, 55, 0.3)",
+          subtle: "#E2E8F0",
+          gold: "rgba(212, 175, 55, 0.35)",
         },
         txt: {
-          primary: "#FFFFFF",
-          secondary: "#A1A1AA",
-          muted: "#71717A",
+          primary: "#0F172A",
+          secondary: "#475569",
+          muted: "#64748B",
         }
       },
       fontFamily: {
@@ -34,9 +35,9 @@ export default {
         display: ['Outfit', '"Plus Jakarta Sans"', 'sans-serif'],
       },
       boxShadow: {
-        'gold-glow': '0 0 25px -5px rgba(212, 175, 55, 0.3)',
-        'gold-glow-lg': '0 0 45px -5px rgba(212, 175, 55, 0.5)',
-        'glass': '0 10px 30px 0 rgba(0, 0, 0, 0.6)',
+        'gold-glow': '0 4px 20px -2px rgba(212, 175, 55, 0.3), 0 2px 6px rgba(15, 23, 42, 0.05)',
+        'gold-glow-lg': '0 10px 30px -4px rgba(212, 175, 55, 0.45), 0 4px 12px rgba(15, 23, 42, 0.08)',
+        'glass': '0 10px 30px 0 rgba(15, 23, 42, 0.06)',
       },
       animation: {
         'float-slow': 'float 6s ease-in-out infinite',

@@ -56,7 +56,7 @@ export default function QuoteModal({ isOpen, onClose }) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="absolute inset-0 bg-[#080808]/90 backdrop-blur-md"
+          className="absolute inset-0 bg-slate-950/60 backdrop-blur-md"
         />
 
         {/* Modal Window */}
@@ -64,40 +64,40 @@ export default function QuoteModal({ isOpen, onClose }) {
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="relative z-10 w-full max-w-lg bg-[#171717] rounded-3xl border border-[#C9A45C]/40 p-6 sm:p-8 shadow-2xl overflow-hidden"
+          className="relative z-10 w-full max-w-lg bg-white rounded-3xl border border-[#D4AF37]/40 p-6 sm:p-8 shadow-2xl overflow-hidden"
         >
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-full bg-[#111111] text-gray-400 hover:text-white border border-[#262626]"
+            className="absolute top-4 right-4 p-2 rounded-full bg-slate-100 text-slate-500 hover:text-slate-900 border border-slate-200 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
 
           <div className="flex items-center gap-2 mb-2">
-            <ShieldCheck className="w-4 h-4 text-[#C9A45C]" />
-            <span className="text-xs font-bold text-[#E6C982] tracking-wider uppercase">
+            <ShieldCheck className="w-4 h-4 text-[#B48608]" />
+            <span className="text-xs font-bold text-[#B48608] tracking-wider uppercase">
               SUN MATS WORKS QUOTE
             </span>
           </div>
 
-          <h3 className="font-display font-bold text-2xl text-white mb-2">
+          <h3 className="font-display font-bold text-2xl text-slate-900 mb-2">
             Get a Free Instant Quote
           </h3>
 
-          <p className="text-xs text-gray-400 font-light mb-6">
+          <p className="text-xs text-slate-500 font-normal mb-6">
             Serving Melapalayam, Tirunelveli & surrounding regions with reasonable pricing.
           </p>
 
           {submitted ? (
             <div className="py-8 text-center">
-              <div className="w-14 h-14 rounded-full bg-emerald-950 border border-emerald-500 flex items-center justify-center mx-auto mb-3">
-                <CheckCircle2 className="w-8 h-8 text-emerald-400" />
+              <div className="w-14 h-14 rounded-full bg-emerald-100 border border-emerald-400 flex items-center justify-center mx-auto mb-3">
+                <CheckCircle2 className="w-8 h-8 text-emerald-600" />
               </div>
-              <h4 className="font-display font-bold text-xl text-white mb-2">
+              <h4 className="font-display font-bold text-xl text-slate-900 mb-2">
                 Opening WhatsApp...
               </h4>
-              <p className="text-xs text-gray-300 font-light mb-6">
+              <p className="text-xs text-slate-600 font-normal mb-6">
                 Your quote details have been pre-filled. If WhatsApp didn't open automatically, click below to send your request.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-3">
@@ -105,7 +105,7 @@ export default function QuoteModal({ isOpen, onClose }) {
                   href={`https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(`*New Instant Quote Request - SUN Mats Works*\n\n👤 *Name:* ${formData.name.trim()}\n📞 *Phone:* ${formData.phone.trim()}\n🛠️ *Service:* ${formData.service}\n📝 *Details:* ${formData.message.trim() || 'N/A'}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase"
+                  className="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase shadow-md"
                 >
                   Send on WhatsApp
                 </a>
@@ -114,7 +114,7 @@ export default function QuoteModal({ isOpen, onClose }) {
                     setSubmitted(false);
                     onClose();
                   }}
-                  className="px-5 py-2.5 rounded-xl bg-[#111111] border border-[#262626] text-xs font-semibold text-[#E6C982]"
+                  className="px-5 py-2.5 rounded-xl bg-white border border-slate-200 text-xs font-bold text-[#B48608]"
                 >
                   Close
                 </button>
@@ -123,7 +123,7 @@ export default function QuoteModal({ isOpen, onClose }) {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-[11px] font-semibold text-gray-300 uppercase tracking-wider mb-1.5">
+                <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                   Full Name *
                 </label>
                 <input
@@ -132,12 +132,12 @@ export default function QuoteModal({ isOpen, onClose }) {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="e.g. Mohamed Ismail"
-                  className="w-full px-4 py-3 rounded-xl bg-[#080808] border border-[#262626] text-white text-xs focus:border-[#C9A45C] focus:outline-none"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-xs focus:border-[#D4AF37] focus:outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-[11px] font-semibold text-gray-300 uppercase tracking-wider mb-1.5">
+                <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                   Phone Number *
                 </label>
                 <input
@@ -146,18 +146,18 @@ export default function QuoteModal({ isOpen, onClose }) {
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder="+91 90873 68191"
-                  className="w-full px-4 py-3 rounded-xl bg-[#080808] border border-[#262626] text-white text-xs focus:border-[#C9A45C] focus:outline-none"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-xs focus:border-[#D4AF37] focus:outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-[11px] font-semibold text-gray-300 uppercase tracking-wider mb-1.5">
+                <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                   Service Interested In
                 </label>
                 <select
                   value={formData.service}
                   onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-[#080808] border border-[#262626] text-white text-xs focus:border-[#C9A45C] focus:outline-none"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-xs focus:border-[#D4AF37] focus:outline-none"
                 >
                   <option value="Car Mats">Custom 7D/9D Car Mats</option>
                   <option value="Floor Mats">Heavy Duty Floor Mats</option>
@@ -169,7 +169,7 @@ export default function QuoteModal({ isOpen, onClose }) {
               </div>
 
               <div>
-                <label className="block text-[11px] font-semibold text-gray-300 uppercase tracking-wider mb-1.5">
+                <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                   Additional Notes
                 </label>
                 <textarea
@@ -177,13 +177,13 @@ export default function QuoteModal({ isOpen, onClose }) {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Car model or room square footage..."
-                  className="w-full px-4 py-3 rounded-xl bg-[#080808] border border-[#262626] text-white text-xs focus:border-[#C9A45C] focus:outline-none"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-xs focus:border-[#D4AF37] focus:outline-none"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#E6C982] via-[#C9A45C] to-[#9A7B39] text-black font-display font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-gold-glow"
+                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#F5D77F] via-[#D4AF37] to-[#B48608] text-slate-950 font-display font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-gold-glow"
               >
                 <Send className="w-4 h-4" />
                 <span>Submit Quote Request</span>

@@ -77,7 +77,7 @@ export default function TrustBar() {
 
   return (
     <section ref={ref} className="relative z-20 -mt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-4 sm:p-6 rounded-2xl bg-[#13151C]/95 border border-[#D4AF37]/35 shadow-gold-glow backdrop-blur-xl">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-4 sm:p-6 rounded-2xl bg-white/95 border border-[#D4AF37]/35 shadow-gold-glow backdrop-blur-xl">
         {statItems.map((item, index) => {
           const IconComp = item.icon;
           return (
@@ -86,20 +86,20 @@ export default function TrustBar() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex flex-col items-center sm:items-start text-center sm:text-left p-3 rounded-xl hover:bg-[#1C1F28]/60 transition-colors group"
+              className="flex flex-col items-center sm:items-start text-center sm:text-left p-3 rounded-xl hover:bg-slate-50 transition-colors group"
             >
               <div className="flex items-center gap-2.5 mb-2">
-                <div className="p-2 rounded-lg bg-[#0F1117] border border-[#202430] group-hover:border-[#D4AF37]/50 transition-colors">
-                  <IconComp className="w-5 h-5 text-[#D4AF37]" />
+                <div className="p-2 rounded-lg bg-amber-50 border border-amber-200/80 group-hover:border-[#D4AF37] transition-colors">
+                  <IconComp className="w-5 h-5 text-[#B48608]" />
                 </div>
-                <span className="font-display font-bold text-xl sm:text-3xl text-white group-hover:text-[#F3D379] transition-colors">
+                <span className="font-display font-bold text-xl sm:text-3xl text-slate-900 group-hover:text-[#B48608] transition-colors">
                   {item.display}
                 </span>
               </div>
-              <h3 className="text-sm font-semibold text-gray-200 tracking-wide">
+              <h3 className="text-sm font-semibold text-slate-800 tracking-wide">
                 {item.label}
               </h3>
-              <p className="text-xs text-gray-400 font-light mt-0.5">
+              <p className="text-xs text-slate-500 font-normal mt-0.5">
                 {item.subtext}
               </p>
             </motion.div>

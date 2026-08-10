@@ -15,24 +15,24 @@ export default function Services({ onSelectServiceCategory, onOpenQuote }) {
   };
 
   return (
-    <section id="services" className="py-24 bg-[#111111] relative overflow-hidden">
+    <section id="services" className="py-24 bg-[#F8FAFC] relative overflow-hidden">
       {/* Background radial highlight */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#C9A45C]/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#C9A45C]/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold text-[#C9A45C] tracking-widest uppercase block mb-3">
+          <span className="text-xs font-bold text-[#B48608] tracking-widest uppercase block mb-3">
             OUR EXPERTISE & PRODUCTS
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight">
+          <h2 className="font-display text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">
             What We Do
           </h2>
-          <p className="text-base sm:text-lg text-gray-400 mt-4 font-light max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-slate-600 mt-4 font-normal max-w-2xl mx-auto">
             Premium materials and professional finishing for cars, homes, offices and commercial spaces.
           </p>
-          <div className="w-16 h-1 bg-gradient-to-r from-[#E6C982] to-[#C9A45C] mx-auto mt-4 rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#F5D77F] to-[#D4AF37] mx-auto mt-4 rounded-full"></div>
         </div>
 
         {/* Services Grid (3 Columns) */}
@@ -44,20 +44,20 @@ export default function Services({ onSelectServiceCategory, onOpenQuote }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative flex flex-col bg-[#171717] rounded-2xl overflow-hidden border border-[#262626] hover:border-[#C9A45C]/60 hover:shadow-gold-glow transition-all duration-500 h-full"
+              className="group relative flex flex-col bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-[#D4AF37] hover:shadow-xl transition-all duration-500 shadow-sm h-full"
             >
               {/* Image Container */}
               <div className="relative h-52 sm:h-60 overflow-hidden">
                 <img
                   src={getImageUrl(service.image)}
                   alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter brightness-95 group-hover:brightness-105"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter brightness-100 group-hover:brightness-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#171717] via-[#171717]/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent"></div>
                 
                 {/* Gold Category Badge */}
-                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#080808]/80 border border-[#C9A45C]/40 backdrop-blur-md">
-                  <span className="text-[11px] font-bold text-[#E6C982] tracking-wider uppercase">
+                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 border border-[#D4AF37]/50 backdrop-blur-md shadow-sm">
+                  <span className="text-[11px] font-bold text-[#B48608] tracking-wider uppercase">
                     SUN MATS
                   </span>
                 </div>
@@ -66,19 +66,19 @@ export default function Services({ onSelectServiceCategory, onOpenQuote }) {
               {/* Card Content Body */}
               <div className="p-6 flex flex-col flex-grow justify-between">
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white group-hover:text-[#E6C982] transition-colors mb-3">
+                  <h3 className="font-display font-bold text-xl text-slate-900 group-hover:text-[#B48608] transition-colors mb-3">
                     {service.title}
                   </h3>
 
-                  <p className="text-sm text-gray-300 font-light leading-relaxed mb-6">
+                  <p className="text-sm text-slate-600 font-normal leading-relaxed mb-6">
                     {service.description}
                   </p>
 
                   {/* Bullet features */}
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feat, fIdx) => (
-                      <li key={fIdx} className="flex items-center gap-2 text-xs text-gray-400">
-                        <Check className="w-3.5 h-3.5 text-[#C9A45C] shrink-0" />
+                      <li key={fIdx} className="flex items-center gap-2 text-xs text-slate-600 font-medium">
+                        <Check className="w-3.5 h-3.5 text-[#B48608] shrink-0" />
                         <span>{feat}</span>
                       </li>
                     ))}
@@ -86,18 +86,18 @@ export default function Services({ onSelectServiceCategory, onOpenQuote }) {
                 </div>
 
                 {/* Card Action Links */}
-                <div className="pt-4 border-t border-[#262626] flex items-center justify-between mt-auto">
+                <div className="pt-4 border-t border-slate-100 flex items-center justify-between mt-auto">
                   <button
                     onClick={() => handleViewProjects(service.title)}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E6C982] hover:text-white transition-colors group/btn"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#B48608] hover:text-slate-900 transition-colors group/btn"
                   >
                     <span>View Projects</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#C9A45C] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                    <ArrowUpRight className="w-4 h-4 text-[#B48608] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                   </button>
 
                   <button
                     onClick={onOpenQuote}
-                    className="text-xs text-gray-400 hover:text-[#E6C982] transition-colors"
+                    className="text-xs text-slate-500 font-semibold hover:text-[#B48608] transition-colors"
                   >
                     Get Quote
                   </button>
