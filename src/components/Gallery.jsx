@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Maximize2, ShieldCheck, Tag } from 'lucide-react';
+import { Maximize2, ShieldCheck, Tag, ArrowRight } from 'lucide-react';
 import { PROJECTS_GALLERY, getImageUrl } from '../data/businessData';
 import LightboxModal from './LightboxModal';
 
@@ -43,35 +43,39 @@ export default function Gallery({ selectedCategory, onSelectCategory }) {
   };
 
   return (
-    <section id="projects" className="py-24 bg-[#080808] relative overflow-hidden">
+    <section id="projects" className="py-20 sm:py-28 bg-[#080808] relative overflow-hidden">
+      
+      {/* Background Glow */}
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#C9A45C]/5 rounded-full blur-3xl pointer-events-none"></div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <span className="text-xs font-bold text-[#C9A45C] tracking-widest uppercase block mb-3">
             PORTFOLIO & WORK SHOWCASE
           </span>
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight">
             Our Recent Work
           </h2>
-          <p className="text-base sm:text-lg text-gray-400 mt-4 font-light">
-            Explore our work across wallpapers, mats, carpets and interior surfaces in Tirunelveli.
+          <p className="text-base sm:text-lg text-gray-400 mt-4 font-light max-w-2xl mx-auto">
+            Explore authentic client installations and premium interior transformations across Tirunelveli.
           </p>
           <div className="w-16 h-1 bg-gradient-to-r from-[#E6C982] to-[#C9A45C] mx-auto mt-4 rounded-full"></div>
         </div>
 
-        {/* Category Filter Pills */}
-        <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mb-14">
+        {/* Category Filter Pills (Scrollable on mobile, Centered on desktop) */}
+        <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-4 mb-10 sm:mb-14 scrollbar-none sm:flex-wrap sm:justify-center -mx-4 px-4 sm:mx-0 sm:px-0">
           {categories.map((cat) => {
             const isActive = activeFilter.toLowerCase() === cat.toLowerCase();
             return (
               <button
                 key={cat}
                 onClick={() => handleFilterClick(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 ${
+                className={`whitespace-nowrap px-4 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 ${
                   isActive
-                    ? 'bg-gradient-to-r from-[#E6C982] via-[#C9A45C] to-[#9A7B39] text-black shadow-gold-glow scale-105'
-                    : 'bg-[#171717] border border-[#262626] text-gray-300 hover:border-[#C9A45C]/40 hover:text-white'
+                    ? 'bg-gradient-to-r from-[#E6C982] via-[#C9A45C] to-[#9A7B39] text-black shadow-gold-glow scale-105 font-bold'
+                    : 'bg-[#171717] border border-[#262626] text-gray-300 hover:border-[#C9A45C]/50 hover:text-white'
                 }`}
               >
                 {cat}
@@ -80,62 +84,63 @@ export default function Gallery({ selectedCategory, onSelectCategory }) {
           })}
         </div>
 
-        {/* Gallery Grid: Desktop 3 cols, Tablet 2 cols, Mobile 1 col */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Perfectly Arranged Responsive Grid (1 col Mobile, 2 cols Tablet, 3 cols Desktop) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredProjects.map((project, idx) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.06 }}
+              transition={{ duration: 0.4, delay: idx * 0.05 }}
               onClick={() => handleOpenLightbox(project)}
               className="group relative bg-[#171717] rounded-2xl overflow-hidden border border-[#262626] hover:border-[#C9A45C]/60 hover:shadow-gold-glow cursor-pointer transition-all duration-500 flex flex-col h-full"
             >
-              {/* Image Container */}
-              <div className="relative h-56 sm:h-72 overflow-hidden bg-black">
+              {/* Image Container with Uniform Aspect Ratio */}
+              <div className="relative aspect-[16/10] sm:aspect-[4/3] w-full overflow-hidden bg-[#111111]">
                 <img
                   src={getImageUrl(project.image)}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 filter brightness-95 group-hover:brightness-105"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
 
                 {/* Real Photo Tag */}
                 {project.isClientPhoto && (
-                  <div className="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-[#080808]/90 border border-[#C9A45C]/40 text-[10px] font-bold text-[#E6C982] tracking-wider uppercase flex items-center gap-1">
-                    <ShieldCheck className="w-3 h-3 text-[#C9A45C]" /> Real Photo
+                  <div className="absolute top-3.5 left-3.5 px-2.5 py-1 rounded-full bg-[#080808]/90 border border-[#C9A45C]/50 text-[10px] font-bold text-[#E6C982] tracking-wider uppercase flex items-center gap-1.5 backdrop-blur-md">
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#C9A45C]" /> Real Client Photo
                   </div>
                 )}
 
-                {/* Hover Expand Icon */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-12 h-12 rounded-full bg-[#080808]/80 border border-[#C9A45C] flex items-center justify-center text-[#E6C982] shadow-gold-glow transform group-hover:scale-110 transition-transform">
+                {/* Hover Expand Button */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 backdrop-blur-[2px]">
+                  <div className="w-12 h-12 rounded-full bg-[#080808]/90 border border-[#C9A45C] flex items-center justify-center text-[#E6C982] shadow-gold-glow transform group-hover:scale-110 transition-transform">
                     <Maximize2 className="w-5 h-5" />
                   </div>
                 </div>
               </div>
 
               {/* Card Meta Content */}
-              <div className="p-6 flex flex-col justify-between flex-grow">
+              <div className="p-5 sm:p-6 flex flex-col justify-between flex-grow bg-[#171717]">
                 <div>
-                  <div className="flex items-center gap-2 mb-2">
+                  <div className="flex items-center justify-between gap-2 mb-2.5">
                     <span className="text-[11px] font-bold text-[#C9A45C] uppercase tracking-wider flex items-center gap-1">
-                      <Tag className="w-3 h-3" /> {project.category}
+                      <Tag className="w-3 h-3 text-[#C9A45C]" /> {project.category}
                     </span>
                   </div>
 
-                  <h3 className="font-display font-bold text-lg text-white group-hover:text-[#E6C982] transition-colors leading-snug">
+                  <h3 className="font-display font-bold text-base sm:text-lg text-white group-hover:text-[#E6C982] transition-colors leading-snug line-clamp-2">
                     {project.title}
                   </h3>
                 </div>
 
                 <div className="pt-4 border-t border-[#262626] mt-4 flex items-center justify-between">
-                  <span className="text-xs text-gray-400 font-light">
+                  <span className="text-xs text-gray-400 font-light truncate max-w-[65%]">
                     {project.location}
                   </span>
-                  <span className="text-xs font-semibold text-[#E6C982] group-hover:underline">
-                    View Project →
+                  <span className="text-xs font-semibold text-[#E6C982] group-hover:text-white flex items-center gap-1 transition-colors">
+                    View <ArrowRight className="w-3.5 h-3.5 text-[#C9A45C] group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
               </div>
