@@ -53,7 +53,7 @@ export default function Services({ onSelectServiceCategory, onOpenQuote }) {
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter brightness-100 group-hover:brightness-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent opacity-60"></div>
                 
                 {/* Gold Category Badge */}
                 <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-amber-100 border border-amber-300 backdrop-blur-md shadow-sm">

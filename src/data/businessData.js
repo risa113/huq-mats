@@ -133,7 +133,7 @@ export const PROJECTS_GALLERY = [
     title: "Gold Damask Wallpaper & Wood Grain Plank Fitting",
     category: "Wall Design",
     categorySlug: "wall-design",
-    image: "./images/real_gold_wallpaper.png",
+    image: "./images/real_gold_wallpaper.jpg",
     isClientPhoto: true,
     location: "Melapalayam Residence",
     details: "Elegantly finished gold damask wallpaper half-wall installation complemented by wood grain floor planking."
@@ -143,7 +143,7 @@ export const PROJECTS_GALLERY = [
     title: "Mosque & Prayer Hall Royal Blue Runner Carpet",
     category: "Carpet",
     categorySlug: "carpet",
-    image: "./images/real_mosque_carpet.png",
+    image: "./images/real_mosque_carpet.jpg",
     isClientPhoto: true,
     location: "Melapalayam Mosque Project",
     details: "Plush royal blue patterned prayer carpet runner with red border installed across prayer hall."
@@ -153,7 +153,7 @@ export const PROJECTS_GALLERY = [
     title: "Villa Courtyard Pavers with Artificial Grass Grid",
     category: "Artificial Grass",
     categorySlug: "artificial-grass",
-    image: "./images/real_grass_pavers.png",
+    image: "./images/real_grass_pavers.jpg",
     isClientPhoto: true,
     location: "Engineers Colony Villa",
     details: "Evergreen artificial grass turf strips installed between red outdoor paver blocks in courtyard."
@@ -163,7 +163,7 @@ export const PROJECTS_GALLERY = [
     title: "Commercial Salon Grey Wood Vinyl & Turf Wall",
     category: "Interior Flooring",
     categorySlug: "interior-flooring",
-    image: "./images/real_salon_vinyl.png",
+    image: "./images/real_salon_vinyl.jpg",
     isClientPhoto: true,
     location: "Raja Nagar Commercial Salon",
     details: "Waterproof grey oak vinyl plank flooring fitted alongside green artificial grass wall accents."
