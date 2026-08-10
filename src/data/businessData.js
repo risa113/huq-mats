@@ -200,13 +200,13 @@ export const PROJECTS_GALLERY = [
   },
   {
     id: "proj-9",
-    title: "Showroom Display & Sample Catalog Board Showcase",
-    category: "Floor Mats",
-    categorySlug: "floor-mats",
-    image: "./images/client_catalog_board.png",
+    title: "Commercial Office Modular Acoustic Carpet & Partition Fitting",
+    category: "Carpet",
+    categorySlug: "carpet",
+    image: "./images/client_office_carpet.jpg",
     isClientPhoto: true,
-    location: "Melapalayam Showroom",
-    details: "Authentic SUN Mats Works showroom display board showcasing vinyl patterns, rubber floor mats, and custom texture samples."
+    location: "Melapalayam Commercial Site",
+    details: "Authentic SUN Mats Works installation featuring heavy-duty dark navy acoustic carpet tile flooring and aluminum glass partition cabin fitting for corporate offices."
   }
 ];
 
