@@ -1,0 +1,197 @@
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, Send, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { BUSINESS_INFO } from '../data/businessData';
+
+export default function QuoteModal({ isOpen, onClose }) {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    service: 'Car Mats',
+    message: ''
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    if (isOpen) {
+      window.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      window.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formData.name.trim() || !formData.phone.trim()) return;
+
+    // Construct formatted WhatsApp message
+    const waMsg = `*New Instant Quote Request - SUN Mats Works*\n\n` +
+      `👤 *Name:* ${formData.name.trim()}\n` +
+      `📞 *Phone:* ${formData.phone.trim()}\n` +
+      `🛠️ *Service:* ${formData.service}\n` +
+      `📝 *Details:* ${formData.message.trim() || 'N/A'}`;
+
+    const waUrl = `https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(waMsg)}`;
+    
+    // Open WhatsApp in new tab
+    window.open(waUrl, '_blank');
+
+    setSubmitted(true);
+  };
+
+  return (
+    <AnimatePresence>
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+        {/* Backdrop */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+          className="absolute inset-0 bg-[#080808]/90 backdrop-blur-md"
+        />
+
+        {/* Modal Window */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.95, y: 20 }}
+          className="relative z-10 w-full max-w-lg bg-[#171717] rounded-3xl border border-[#C9A45C]/40 p-6 sm:p-8 shadow-2xl overflow-hidden"
+        >
+          {/* Close button */}
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 p-2 rounded-full bg-[#111111] text-gray-400 hover:text-white border border-[#262626]"
+          >
+            <X className="w-5 h-5" />
+          </button>
+
+          <div className="flex items-center gap-2 mb-2">
+            <ShieldCheck className="w-4 h-4 text-[#C9A45C]" />
+            <span className="text-xs font-bold text-[#E6C982] tracking-wider uppercase">
+              SUN MATS WORKS QUOTE
+            </span>
+          </div>
+
+          <h3 className="font-display font-bold text-2xl text-white mb-2">
+            Get a Free Instant Quote
+          </h3>
+
+          <p className="text-xs text-gray-400 font-light mb-6">
+            Serving Melapalayam, Tirunelveli & surrounding regions with reasonable pricing.
+          </p>
+
+          {submitted ? (
+            <div className="py-8 text-center">
+              <div className="w-14 h-14 rounded-full bg-emerald-950 border border-emerald-500 flex items-center justify-center mx-auto mb-3">
+                <CheckCircle2 className="w-8 h-8 text-emerald-400" />
+              </div>
+              <h4 className="font-display font-bold text-xl text-white mb-2">
+                Opening WhatsApp...
+              </h4>
+              <p className="text-xs text-gray-300 font-light mb-6">
+                Your quote details have been pre-filled. If WhatsApp didn't open automatically, click below to send your request.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <a
+                  href={`https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(`*New Instant Quote Request - SUN Mats Works*\n\n👤 *Name:* ${formData.name.trim()}\n📞 *Phone:* ${formData.phone.trim()}\n🛠️ *Service:* ${formData.service}\n📝 *Details:* ${formData.message.trim() || 'N/A'}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase"
+                >
+                  Send on WhatsApp
+                </a>
+                <button
+                  onClick={() => {
+                    setSubmitted(false);
+                    onClose();
+                  }}
+                  className="px-5 py-2.5 rounded-xl bg-[#111111] border border-[#262626] text-xs font-semibold text-[#E6C982]"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label className="block text-[11px] font-semibold text-gray-300 uppercase tracking-wider mb-1.5">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  placeholder="e.g. Mohamed Ismail"
+                  className="w-full px-4 py-3 rounded-xl bg-[#080808] border border-[#262626] text-white text-xs focus:border-[#C9A45C] focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-[11px] font-semibold text-gray-300 uppercase tracking-wider mb-1.5">
+                  Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  required
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  placeholder="+91 90873 68191"
+                  className="w-full px-4 py-3 rounded-xl bg-[#080808] border border-[#262626] text-white text-xs focus:border-[#C9A45C] focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-[11px] font-semibold text-gray-300 uppercase tracking-wider mb-1.5">
+                  Service Interested In
+                </label>
+                <select
+                  value={formData.service}
+                  onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                  className="w-full px-4 py-3 rounded-xl bg-[#080808] border border-[#262626] text-white text-xs focus:border-[#C9A45C] focus:outline-none"
+                >
+                  <option value="Car Mats">Custom 7D/9D Car Mats</option>
+                  <option value="Floor Mats">Heavy Duty Floor Mats</option>
+                  <option value="Wallpaper">Wallpaper & Wall Design</option>
+                  <option value="Carpet">Plush & Mosque Carpet</option>
+                  <option value="Artificial Grass">Artificial Grass Turf</option>
+                  <option value="Interior Solutions">Interior Surface Solutions</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-[11px] font-semibold text-gray-300 uppercase tracking-wider mb-1.5">
+                  Additional Notes
+                </label>
+                <textarea
+                  rows="3"
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  placeholder="Car model or room square footage..."
+                  className="w-full px-4 py-3 rounded-xl bg-[#080808] border border-[#262626] text-white text-xs focus:border-[#C9A45C] focus:outline-none"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#E6C982] via-[#C9A45C] to-[#9A7B39] text-black font-display font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-gold-glow"
+              >
+                <Send className="w-4 h-4" />
+                <span>Submit Quote Request</span>
+              </button>
+            </form>
+          )}
+        </motion.div>
+      </div>
+    </AnimatePresence>
+  );
+}

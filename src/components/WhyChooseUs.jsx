@@ -1,0 +1,59 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { WHY_CHOOSE_US } from '../data/businessData';
+
+export default function WhyChooseUs() {
+  return (
+    <section className="py-24 bg-[#080808] relative overflow-hidden border-t border-b border-[#262626]">
+      {/* Background Subtle Grid Texture */}
+      <div className="absolute inset-0 bg-[radial-gradient(#C9A45C_1px,transparent_1px)] [background-size:32px_32px] opacity-[0.03] pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-xs font-bold text-[#C9A45C] tracking-widest uppercase block mb-3">
+            THE SUN MATS DIFFERENCE
+          </span>
+          <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight">
+            Why Choose SUN Mats Works?
+          </h2>
+          <p className="text-base text-gray-400 mt-4 font-light">
+            Delivering uncompromised craftsmanship, fair local pricing, and long-lasting surface beauty.
+          </p>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#E6C982] to-[#C9A45C] mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        {/* 6 Grid Benefits */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {WHY_CHOOSE_US.map((item, index) => (
+            <motion.div
+              key={item.num}
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="p-8 rounded-2xl bg-[#111111] border border-[#262626] hover:border-[#C9A45C]/50 hover:bg-[#171717] transition-all duration-300 group relative"
+            >
+              {/* Large Gold Number */}
+              <div className="font-display font-extrabold text-4xl sm:text-5xl gold-text-gradient mb-4 opacity-80 group-hover:opacity-100 transition-opacity">
+                {item.num}
+              </div>
+
+              <h3 className="font-display font-bold text-xl text-white group-hover:text-[#E6C982] transition-colors mb-3">
+                {item.title}
+              </h3>
+
+              <p className="text-sm text-gray-400 font-light leading-relaxed">
+                {item.description}
+              </p>
+
+              <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#C9A45C]/10 to-transparent rounded-tr-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </motion.div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
