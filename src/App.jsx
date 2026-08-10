@@ -37,7 +37,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080808] text-white flex flex-col selection:bg-[#C9A45C] selection:text-black">
+    <div className="min-h-screen bg-[#0A0B0E] text-white flex flex-col selection:bg-[#D4AF37] selection:text-black">
       {/* Sticky Global Navigation */}
       <Navbar onOpenQuote={handleOpenQuote} />
 

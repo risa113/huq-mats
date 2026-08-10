@@ -9,7 +9,6 @@ export default function TrustBar() {
 
   useEffect(() => {
     if (isInView) {
-      // Animate Rating to 4.9
       let ratingInterval = setInterval(() => {
         setCounts(prev => {
           if (prev.rating < 4.9) {
@@ -21,7 +20,6 @@ export default function TrustBar() {
         });
       }, 40);
 
-      // Animate Reviews to 19
       let reviewsInterval = setInterval(() => {
         setCounts(prev => {
           if (prev.reviews < 19) {
@@ -32,7 +30,6 @@ export default function TrustBar() {
         });
       }, 50);
 
-      // Animate Projects to 100
       let projectsInterval = setInterval(() => {
         setCounts(prev => {
           if (prev.projects < 100) {
@@ -80,7 +77,7 @@ export default function TrustBar() {
 
   return (
     <section ref={ref} className="relative z-20 -mt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-4 sm:p-6 rounded-2xl bg-[#111111]/90 border border-[#C9A45C]/30 shadow-2xl backdrop-blur-xl">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-4 sm:p-6 rounded-2xl bg-[#13151C]/95 border border-[#D4AF37]/35 shadow-gold-glow backdrop-blur-xl">
         {statItems.map((item, index) => {
           const IconComp = item.icon;
           return (
@@ -89,13 +86,13 @@ export default function TrustBar() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex flex-col items-center sm:items-start text-center sm:text-left p-3 rounded-xl hover:bg-[#171717]/60 transition-colors group"
+              className="flex flex-col items-center sm:items-start text-center sm:text-left p-3 rounded-xl hover:bg-[#1C1F28]/60 transition-colors group"
             >
-              <div className="flex items-center gap-2 mb-2">
-                <div className="p-2 rounded-lg bg-[#171717] border border-[#262626] group-hover:border-[#C9A45C]/40 transition-colors">
-                  <IconComp className="w-5 h-5 text-[#C9A45C]" />
+              <div className="flex items-center gap-2.5 mb-2">
+                <div className="p-2 rounded-lg bg-[#0F1117] border border-[#202430] group-hover:border-[#D4AF37]/50 transition-colors">
+                  <IconComp className="w-5 h-5 text-[#D4AF37]" />
                 </div>
-                <span className="font-display font-bold text-2xl sm:text-3xl text-white group-hover:text-[#E6C982] transition-colors">
+                <span className="font-display font-bold text-xl sm:text-3xl text-white group-hover:text-[#F3D379] transition-colors">
                   {item.display}
                 </span>
               </div>
