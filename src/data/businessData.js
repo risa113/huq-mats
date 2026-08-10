@@ -190,16 +190,6 @@ export const PROJECTS_GALLERY = [
   },
   {
     id: "proj-8",
-    title: "On-Site Professional Adhesive & Surface Fitting",
-    category: "Custom Installation",
-    categorySlug: "custom-installation",
-    image: "./images/client_interior_installation.png",
-    isClientPhoto: true,
-    location: "Melapalayam Commercial Site",
-    details: "Skilled SUN Mats Works technicians applying custom adhesive and fitting vinyl surface mats and wallpapers."
-  },
-  {
-    id: "proj-9",
     title: "Commercial Office Modular Acoustic Carpet & Partition Fitting",
     category: "Carpet",
     categorySlug: "carpet",
@@ -207,6 +197,16 @@ export const PROJECTS_GALLERY = [
     isClientPhoto: true,
     location: "Melapalayam Commercial Site",
     details: "Authentic SUN Mats Works installation featuring heavy-duty dark navy acoustic carpet tile flooring and aluminum glass partition cabin fitting for corporate offices."
+  },
+  {
+    id: "proj-9",
+    title: "Showroom Display & Sample Catalog Board Showcase",
+    category: "Floor Mats",
+    categorySlug: "floor-mats",
+    image: "./images/client_catalog_board.png",
+    isClientPhoto: true,
+    location: "Melapalayam Showroom",
+    details: "Authentic SUN Mats Works showroom display board showcasing vinyl patterns, rubber floor mats, and custom texture samples."
   }
 ];
 
