@@ -84,8 +84,8 @@ export default function Gallery({ selectedCategory, onSelectCategory }) {
           })}
         </div>
 
-        {/* Perfectly Arranged Responsive Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* Perfectly Arranged Responsive Grid (2 columns on tablet, 4 columns on desktop = 2 perfect rows of 4) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
           {filteredProjects.map((project, idx) => (
             <motion.div
               key={project.id}
@@ -94,22 +94,27 @@ export default function Gallery({ selectedCategory, onSelectCategory }) {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
               onClick={() => handleOpenLightbox(project)}
-              className="group relative bg-white rounded-2xl overflow-hidden border border-slate-300 hover:border-[#854D0E] hover:shadow-2xl cursor-pointer transition-all duration-500 flex flex-col h-full shadow-sm"
+              className="group relative bg-white rounded-2xl overflow-hidden border border-slate-300 hover:border-[#854D0E] hover:shadow-2xl cursor-pointer transition-all duration-500 flex flex-col h-full shadow-md hover:-translate-y-1.5"
             >
               {/* Image Container with Uniform Aspect Ratio */}
-              <div className="relative aspect-[16/10] sm:aspect-[4/3] w-full overflow-hidden bg-slate-100">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
                 <img
                   src={getImageUrl(project.image)}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 filter brightness-100 group-hover:brightness-105"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter brightness-100 group-hover:brightness-105"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+
+                {/* Top Category Badge */}
+                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/95 border border-amber-300 text-[10px] font-black text-amber-950 tracking-wider uppercase backdrop-blur-md shadow-sm">
+                  {project.category}
+                </div>
 
                 {/* Real Photo Tag */}
                 {project.isClientPhoto && (
-                  <div className="absolute top-3.5 left-3.5 px-2.5 py-1 rounded-full bg-white border border-amber-400 text-[10px] font-black text-amber-950 tracking-wider uppercase flex items-center gap-1.5 backdrop-blur-md shadow-md">
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#854D0E]" /> Real Client Photo
+                  <div className="absolute top-3 right-3 p-1.5 rounded-full bg-white border border-amber-400 text-amber-950 backdrop-blur-md shadow-sm" title="Real Client Showroom Photo">
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#854D0E]" />
                   </div>
                 )}
 
@@ -122,25 +127,21 @@ export default function Gallery({ selectedCategory, onSelectCategory }) {
               </div>
 
               {/* Card Meta Content */}
-              <div className="p-5 sm:p-6 flex flex-col justify-between flex-grow bg-white">
+              <div className="p-5 flex flex-col justify-between flex-grow bg-white">
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-2.5">
-                    <span className="text-[11px] font-black text-[#854D0E] uppercase tracking-wider flex items-center gap-1">
-                      <Tag className="w-3 h-3 text-[#854D0E]" /> {project.category}
-                    </span>
-                  </div>
-
-                  <h3 className="font-display font-extrabold text-base sm:text-lg text-slate-950 group-hover:text-[#854D0E] transition-colors leading-snug line-clamp-2">
+                  <h3 className="font-display font-extrabold text-sm sm:text-base text-slate-950 group-hover:text-[#854D0E] transition-colors leading-snug line-clamp-2 mb-3">
                     {project.title}
                   </h3>
                 </div>
 
-                <div className="pt-4 border-t border-slate-200 mt-4 flex items-center justify-between">
-                  <span className="text-xs text-slate-700 font-semibold truncate max-w-[65%]">
-                    {project.location}
+                <div className="pt-3 border-t border-slate-200 mt-auto flex items-center justify-between gap-2">
+                  <span className="text-[11px] text-slate-700 font-bold truncate max-w-[60%] flex items-center gap-1">
+                    <Tag className="w-3 h-3 text-[#854D0E] shrink-0" />
+                    {project.location.split(' ')[0]}
                   </span>
-                  <span className="text-xs font-black text-[#854D0E] group-hover:text-slate-950 flex items-center gap-1 transition-colors">
-                    View <ArrowRight className="w-3.5 h-3.5 text-[#854D0E] group-hover:translate-x-1 transition-transform" />
+                  
+                  <span className="px-2.5 py-1 rounded-lg bg-amber-50 border border-amber-200 text-[11px] font-black text-[#854D0E] group-hover:bg-gradient-to-r group-hover:from-[#FDE047] group-hover:to-[#B48608] group-hover:text-slate-950 group-hover:border-transparent transition-all flex items-center gap-1">
+                    View <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                   </span>
                 </div>
               </div>
