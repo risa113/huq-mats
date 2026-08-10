@@ -79,7 +79,7 @@ export const SERVICES = [
     id: "interior-flooring",
     title: "INTERIOR SURFACE SOLUTIONS",
     description: "Custom material and surface solutions tailored to your unique space and aesthetic requirements.",
-    image: "./images/client_interior_installation.png",
+    image: "./images/interior_surface_luxury.jpg",
     features: ["Vinyl & SPC Plank Flooring", "Modular Ceilings & Partitions", "Blinds & Mesh Screens", "Complete Surface Styling"]
   }
 ];
