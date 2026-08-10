@@ -8,25 +8,25 @@ export default {
     extend: {
       colors: {
         bg: {
-          dark: "#0A0B0E",
-          card: "#13151C",
-          subtle: "#0F1117",
-          elevated: "#1C1F28",
+          dark: "#050505",
+          card: "#121212",
+          subtle: "#0D0D0D",
+          elevated: "#1A1A1A",
         },
         gold: {
           DEFAULT: "#D4AF37",
-          light: "#F3D379",
+          light: "#F5D77F",
           dark: "#AA8222",
-          glow: "rgba(212, 175, 55, 0.22)",
+          glow: "rgba(212, 175, 55, 0.25)",
         },
         border: {
-          subtle: "#202430",
-          gold: "rgba(212, 175, 55, 0.25)",
+          subtle: "#222222",
+          gold: "rgba(212, 175, 55, 0.3)",
         },
         txt: {
-          primary: "#F8FAFC",
-          secondary: "#94A3B8",
-          muted: "#64748B",
+          primary: "#FFFFFF",
+          secondary: "#A1A1AA",
+          muted: "#71717A",
         }
       },
       fontFamily: {
@@ -35,8 +35,8 @@ export default {
       },
       boxShadow: {
         'gold-glow': '0 0 25px -5px rgba(212, 175, 55, 0.3)',
-        'gold-glow-lg': '0 0 45px -5px rgba(212, 175, 55, 0.45)',
-        'glass': '0 10px 30px 0 rgba(0, 0, 0, 0.5)',
+        'gold-glow-lg': '0 0 45px -5px rgba(212, 175, 55, 0.5)',
+        'glass': '0 10px 30px 0 rgba(0, 0, 0, 0.6)',
       },
       animation: {
         'float-slow': 'float 6s ease-in-out infinite',

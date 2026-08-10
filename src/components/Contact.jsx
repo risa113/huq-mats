@@ -26,7 +26,6 @@ export default function Contact() {
       return;
     }
 
-    // Construct formatted WhatsApp message
     const waMsg = `*New Quote Request - SUN Mats Works*\n\n` +
       `👤 *Name:* ${formData.name.trim()}\n` +
       `📞 *Phone:* ${formData.phone.trim()}\n` +
@@ -35,31 +34,30 @@ export default function Contact() {
 
     const waUrl = `https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(waMsg)}`;
     
-    // Open WhatsApp in new tab
     window.open(waUrl, '_blank');
 
     setSubmitted(true);
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#080808] relative overflow-hidden">
+    <section id="contact" className="py-20 sm:py-28 bg-[#050505] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold text-[#C9A45C] tracking-widest uppercase block mb-3">
+          <span className="text-xs font-bold text-[#D4AF37] tracking-widest uppercase block mb-3">
             CONTACT & LOCATION
           </span>
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight">
             Let's Work Together
           </h2>
-          <p className="text-base text-gray-400 mt-4 font-light">
+          <p className="text-base text-gray-400 mt-4 font-light max-w-2xl mx-auto">
             Visit our Melapalayam store or send an inquiry for instant pricing and consultation.
           </p>
-          <div className="w-16 h-1 bg-gradient-to-r from-[#E6C982] to-[#C9A45C] mx-auto mt-4 rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#F5D77F] to-[#D4AF37] mx-auto mt-4 rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           
           {/* Left Business Contact Card */}
           <motion.div
@@ -67,31 +65,31 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5 bg-[#111111] p-8 rounded-3xl border border-[#262626] flex flex-col justify-between"
+            className="lg:col-span-5 bg-[#121212] p-7 sm:p-9 rounded-3xl border border-[#222222] flex flex-col justify-between shadow-2xl"
           >
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-[#C9A45C] flex items-center justify-center font-display font-extrabold text-black text-xl">
+              <div className="flex items-center gap-3.5 mb-6">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#F5D77F] via-[#D4AF37] to-[#AA8222] flex items-center justify-center font-display font-extrabold text-black text-xl shadow-gold-glow">
                   S
                 </div>
                 <div>
                   <h3 className="font-display font-bold text-xl text-white">
                     {BUSINESS_INFO.name}
                   </h3>
-                  <p className="text-xs text-[#E6C982] font-medium">
+                  <p className="text-xs text-[#F5D77F] font-medium">
                     {BUSINESS_INFO.brandSubtitle}
                   </p>
                 </div>
               </div>
 
-              <p className="text-xs text-gray-400 leading-relaxed mb-8 border-b border-[#262626] pb-6 font-light">
+              <p className="text-xs text-gray-400 leading-relaxed mb-8 border-b border-[#222222] pb-6 font-light">
                 {BUSINESS_INFO.categories}
               </p>
 
               {/* Info Items */}
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-2.5 rounded-lg bg-[#171717] border border-[#262626] text-[#C9A45C] shrink-0">
+                  <div className="p-3 rounded-xl bg-[#0D0D0D] border border-[#222222] text-[#D4AF37] shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
@@ -105,7 +103,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-2.5 rounded-lg bg-[#171717] border border-[#262626] text-[#C9A45C] shrink-0">
+                  <div className="p-3 rounded-xl bg-[#0D0D0D] border border-[#222222] text-[#D4AF37] shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
@@ -114,7 +112,7 @@ export default function Contact() {
                     </h4>
                     <a
                       href={`tel:${BUSINESS_INFO.phone}`}
-                      className="text-sm font-semibold text-[#E6C982] hover:underline block"
+                      className="text-sm font-semibold text-[#F5D77F] hover:underline block"
                     >
                       {BUSINESS_INFO.phone}
                     </a>
@@ -128,7 +126,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-2.5 rounded-lg bg-[#171717] border border-[#262626] text-[#C9A45C] shrink-0">
+                  <div className="p-3 rounded-xl bg-[#0D0D0D] border border-[#222222] text-[#D4AF37] shrink-0">
                     <Instagram className="w-5 h-5" />
                   </div>
                   <div>
@@ -139,7 +137,7 @@ export default function Contact() {
                       href={BUSINESS_INFO.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-[#E6C982] hover:underline font-medium"
+                      className="text-sm text-[#F5D77F] hover:underline font-medium"
                     >
                       @sun_mats_works
                     </a>
@@ -147,7 +145,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-2.5 rounded-lg bg-[#171717] border border-[#262626] text-[#C9A45C] shrink-0">
+                  <div className="p-3 rounded-xl bg-[#0D0D0D] border border-[#222222] text-[#D4AF37] shrink-0">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
@@ -162,9 +160,9 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-[#262626]">
-              <div className="p-4 rounded-xl bg-[#171717] border border-[#C9A45C]/20 flex items-center justify-between">
-                <span className="text-xs text-gray-300">Google Customer Score</span>
+            <div className="mt-8 pt-6 border-t border-[#222222]">
+              <div className="p-4 rounded-xl bg-[#0D0D0D] border border-[#D4AF37]/30 flex items-center justify-between">
+                <span className="text-xs text-gray-300">Google Rating</span>
                 <span className="text-xs font-bold text-amber-400">★ 4.9 / 5.0 (19 Reviews)</span>
               </div>
             </div>
@@ -177,7 +175,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-7 bg-[#171717] p-8 sm:p-10 rounded-3xl border border-[#C9A45C]/30 shadow-2xl relative"
+            className="lg:col-span-7 bg-[#121212] p-7 sm:p-10 rounded-3xl border border-[#D4AF37]/40 shadow-2xl relative"
           >
             <h3 className="font-display font-bold text-2xl text-white mb-2">
               Request a Free Quote
@@ -190,7 +188,7 @@ export default function Contact() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="p-8 rounded-2xl bg-[#111111] border border-emerald-500/50 text-center"
+                className="p-8 rounded-2xl bg-[#0D0D0D] border border-emerald-500/50 text-center"
               >
                 <div className="w-16 h-16 rounded-full bg-emerald-950 border border-emerald-500 flex items-center justify-center mx-auto mb-4">
                   <CheckCircle2 className="w-10 h-10 text-emerald-400" />
@@ -217,7 +215,7 @@ export default function Contact() {
                       setSubmitted(false);
                       setFormData({ name: '', phone: '', service: 'Wallpaper', message: '' });
                     }}
-                    className="px-6 py-3 rounded-xl bg-[#171717] border border-[#262626] text-xs font-semibold text-[#E6C982] hover:border-[#C9A45C]"
+                    className="px-6 py-3 rounded-xl bg-[#1A1A1A] border border-[#222222] text-xs font-semibold text-[#F5D77F] hover:border-[#D4AF37]"
                   >
                     Fill Form Again
                   </button>
@@ -242,7 +240,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Enter your full name"
-                    className="w-full px-4 py-3.5 rounded-xl bg-[#080808] border border-[#262626] text-white text-sm focus:border-[#C9A45C] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3.5 rounded-xl bg-[#050505] border border-[#222222] text-white text-base sm:text-sm focus:border-[#D4AF37] focus:outline-none transition-colors"
                     required
                   />
                 </div>
@@ -257,7 +255,7 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+91 90000 00000"
-                    className="w-full px-4 py-3.5 rounded-xl bg-[#080808] border border-[#262626] text-white text-sm focus:border-[#C9A45C] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3.5 rounded-xl bg-[#050505] border border-[#222222] text-white text-base sm:text-sm focus:border-[#D4AF37] focus:outline-none transition-colors"
                     required
                   />
                 </div>
@@ -270,7 +268,7 @@ export default function Contact() {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3.5 rounded-xl bg-[#080808] border border-[#262626] text-white text-sm focus:border-[#C9A45C] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3.5 rounded-xl bg-[#050505] border border-[#222222] text-white text-base sm:text-sm focus:border-[#D4AF37] focus:outline-none transition-colors"
                   >
                     <option value="Wallpaper">Wallpaper Installation</option>
                     <option value="Car Mats">Custom Car Mats (7D/9D)</option>
@@ -291,13 +289,13 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell us about your room size, car model, or installation preferences..."
-                    className="w-full px-4 py-3.5 rounded-xl bg-[#080808] border border-[#262626] text-white text-sm focus:border-[#C9A45C] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3.5 rounded-xl bg-[#050505] border border-[#222222] text-white text-base sm:text-sm focus:border-[#D4AF37] focus:outline-none transition-colors"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-[#E6C982] via-[#C9A45C] to-[#9A7B39] text-black font-display font-bold text-sm tracking-wider uppercase flex items-center justify-center gap-2 shadow-gold-glow hover:shadow-gold-glow-lg transition-all"
+                  className="w-full py-4 rounded-xl bg-gradient-to-r from-[#F5D77F] via-[#D4AF37] to-[#AA8222] text-black font-display font-bold text-sm tracking-wider uppercase flex items-center justify-center gap-2 shadow-gold-glow hover:shadow-gold-glow-lg transition-all"
                 >
                   <Send className="w-4 h-4" />
                   <span>Request a Quote</span>
