@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send, CheckCircle2, ShieldCheck } from 'lucide-react';
-import { BUSINESS_INFO } from '../data/businessData';
+import { BUSINESS_INFO, getImageUrl } from '../data/businessData';
 
 export default function QuoteModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({

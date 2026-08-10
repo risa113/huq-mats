@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, MapPin, Instagram, ShieldCheck, Heart } from 'lucide-react';
-import { BUSINESS_INFO } from '../data/businessData';
+import { BUSINESS_INFO, getImageUrl } from '../data/businessData';
 
 export default function Footer() {
   const [modalType, setModalType] = useState(null); // 'privacy' | 'terms'

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, MessageSquare, ShieldCheck, ChevronRight } from 'lucide-react';
-import { BUSINESS_INFO } from '../data/businessData';
+import { BUSINESS_INFO, getImageUrl } from '../data/businessData';
 
 export default function Navbar({ onOpenQuote }) {
   const [isScrolled, setIsScrolled] = useState(false);
