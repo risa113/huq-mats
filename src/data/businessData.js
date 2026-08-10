@@ -21,7 +21,7 @@ export const HERO_DATA = {
   headingMain: "Premium Surfaces. Beautiful Spaces.",
   headingSub: "Premium Wallpaper, Car Mats, Floor Mats & Interior Surface Solutions.",
   paragraph: "Transform your car and interiors with premium-quality mats, wallpapers, carpets, artificial grass and professional installation services in Tirunelveli.",
-  bgImage: "/images/hero_luxury_interior.jpg"
+  bgImage: "./images/hero_luxury_interior.jpg"
 };
 
 export const STATS = [
@@ -36,42 +36,42 @@ export const SERVICES = [
     id: "car-mats",
     title: "CAR MATS",
     description: "Premium custom-fit car mats designed for style, comfort, durability and luxury interior protection.",
-    image: "/images/car_mats_luxury.jpg",
+    image: "./images/car_mats_luxury.jpg",
     features: ["Custom 7D/9D Leatherette", "Precision Vehicle Fit", "All-Weather Protection", "Easy Clean & Waterproof"]
   },
   {
     id: "floor-mats",
     title: "FLOOR MATS",
     description: "Stylish and durable floor mat solutions for residential homes, offices, and commercial establishments.",
-    image: "/images/client_floormat_rolls.png",
+    image: "./images/client_floormat_rolls.png",
     features: ["Heavy Duty Rubber & PVC", "Anti-Slip Safety Texture", "Custom Roll Cut Sizes", "Residential & Commercial"]
   },
   {
     id: "wallpaper",
     title: "WALLPAPER",
     description: "Modern wallpaper designs with professional seamless installation and flawless wall finishing.",
-    image: "/images/client_wallpaper_rolls.png",
+    image: "./images/client_wallpaper_rolls.png",
     features: ["3D Textured & Geometric", "Washable Vinyl Material", "Seamless Expert Fitting", "Hundreds of Modern Patterns"]
   },
   {
     id: "carpet",
     title: "CARPET",
     description: "Premium carpet solutions for plush homes, corporate offices, prayer halls and commercial interiors.",
-    image: "/images/carpet_luxury_showcase.jpg",
+    image: "./images/carpet_luxury_showcase.jpg",
     features: ["Mosque & Auditorium Carpets", "Luxury Wall-to-Wall Rolls", "Soft Foot Comfort", "Stain-Resistant Fiber"]
   },
   {
     id: "artificial-grass",
     title: "ARTIFICIAL GRASS",
     description: "Low-maintenance, evergreen artificial grass turf for lush indoor balconies, terraces and gardens.",
-    image: "/images/artificial_grass_showcase.jpg",
+    image: "./images/artificial_grass_showcase.jpg",
     features: ["UV-Resistant Turf", "Drainage Backing", "Zero Watering Required", "Balcony & Vertical Garden"]
   },
   {
     id: "interior-flooring",
     title: "INTERIOR SURFACE SOLUTIONS",
     description: "Custom material and surface solutions tailored to your unique space and aesthetic requirements.",
-    image: "/images/client_interior_installation.png",
+    image: "./images/client_interior_installation.png",
     features: ["Vinyl & SPC Plank Flooring", "Modular Ceilings & Partitions", "Blinds & Mesh Screens", "Complete Surface Styling"]
   }
 ];
@@ -115,7 +115,7 @@ export const PROJECTS_GALLERY = [
     title: "On-Site Geometric Wallpaper Accent Fitting",
     category: "Wallpaper",
     categorySlug: "wallpaper",
-    image: "/images/real_wallpaper_install.png",
+    image: "./images/real_wallpaper_install.png",
     isClientPhoto: true,
     location: "Tirunelveli Home Installation",
     details: "Authentic SUN Mats Works technician fitting precision geometric pattern wallpaper on upper living room accent walls."
@@ -125,7 +125,7 @@ export const PROJECTS_GALLERY = [
     title: "Gold Damask Wallpaper & Wood Grain Plank Fitting",
     category: "Wall Design",
     categorySlug: "wall-design",
-    image: "/images/real_gold_wallpaper.png",
+    image: "./images/real_gold_wallpaper.png",
     isClientPhoto: true,
     location: "Melapalayam Residence",
     details: "Elegantly finished gold damask wallpaper half-wall installation complemented by wood grain floor planking."
@@ -135,7 +135,7 @@ export const PROJECTS_GALLERY = [
     title: "Mosque & Prayer Hall Royal Blue Runner Carpet",
     category: "Carpet",
     categorySlug: "carpet",
-    image: "/images/real_mosque_carpet.png",
+    image: "./images/real_mosque_carpet.png",
     isClientPhoto: true,
     location: "Melapalayam Mosque Project",
     details: "Plush royal blue patterned prayer carpet runner with red border installed across prayer hall."
@@ -145,7 +145,7 @@ export const PROJECTS_GALLERY = [
     title: "Villa Courtyard Pavers with Artificial Grass Grid",
     category: "Artificial Grass",
     categorySlug: "artificial-grass",
-    image: "/images/real_grass_pavers.png",
+    image: "./images/real_grass_pavers.png",
     isClientPhoto: true,
     location: "Engineers Colony Villa",
     details: "Evergreen artificial grass turf strips installed between red outdoor paver blocks in courtyard."
@@ -155,7 +155,7 @@ export const PROJECTS_GALLERY = [
     title: "Commercial Salon Grey Wood Vinyl & Turf Wall",
     category: "Interior Flooring",
     categorySlug: "interior-flooring",
-    image: "/images/real_salon_vinyl.png",
+    image: "./images/real_salon_vinyl.png",
     isClientPhoto: true,
     location: "Raja Nagar Commercial Salon",
     details: "Waterproof grey oak vinyl plank flooring fitted alongside green artificial grass wall accents."
@@ -165,7 +165,7 @@ export const PROJECTS_GALLERY = [
     title: "Showroom Floor Mat Rolls & Entrance Mats",
     category: "Floor Mats",
     categorySlug: "floor-mats",
-    image: "/images/client_floormat_rolls.png",
+    image: "./images/client_floormat_rolls.png",
     isClientPhoto: true,
     location: "Nethaji Road Showroom",
     details: "Authentic SUN Mats Works showroom inventory featuring rubber mats, entrance mats, and custom cut rolls."
@@ -175,7 +175,7 @@ export const PROJECTS_GALLERY = [
     title: "Custom 7D Executive Leather Car Mat Installation",
     category: "Car Mats",
     categorySlug: "car-mats",
-    image: "/images/car_mats_luxury.jpg",
+    image: "./images/car_mats_luxury.jpg",
     isClientPhoto: false,
     location: "Tirunelveli Auto Detailing",
     details: "Custom molded luxury 7D floor mat with gold contrast stitching for complete vehicle footwell coverage and protection."
@@ -185,7 +185,7 @@ export const PROJECTS_GALLERY = [
     title: "On-Site Professional Adhesive & Surface Fitting",
     category: "Custom Installation",
     categorySlug: "custom-installation",
-    image: "/images/client_interior_installation.png",
+    image: "./images/client_interior_installation.png",
     isClientPhoto: true,
     location: "Melapalayam Commercial Site",
     details: "Skilled SUN Mats Works technicians applying custom adhesive and fitting vinyl surface mats and wallpapers."
@@ -199,7 +199,7 @@ export const FEATURED_PROJECT = {
   location: "Melapalayam, Tirunelveli",
   installation: "SUN Mats Works Master Installer Team",
   description: "A complete interior transformation showcasing precision edge fitting, premium material selection, and flawless execution for a modern commercial facility in Melapalayam.",
-  image: "/images/client_shopfront_night.png"
+  image: "./images/client_shopfront_night.png"
 };
 
 export const REVIEWS = [
