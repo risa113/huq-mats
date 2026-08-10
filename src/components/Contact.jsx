@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, MapPin, Instagram, Clock, Send, CheckCircle2, AlertCircle } from 'lucide-react';
-import { BUSINESS_INFO, SERVICES } from '../data/businessData';
+import { Phone, MapPin, Instagram, Clock, Send, CheckCircle2, AlertCircle, ShieldCheck, MessageSquare } from 'lucide-react';
+import { BUSINESS_INFO } from '../data/businessData';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,13 +11,8 @@ export default function Contact() {
     message: ''
   });
 
-  const [submitted, setSubmitted] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
   const [error, setError] = useState('');
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    if (error) setError('');
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,10 +28,8 @@ export default function Contact() {
       `📝 *Details:* ${formData.message.trim() || 'N/A'}`;
 
     const waUrl = `https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(waMsg)}`;
-    
     window.open(waUrl, '_blank');
-
-    setSubmitted(true);
+    setFormSubmitted(true);
   };
 
   return (
@@ -45,80 +38,80 @@ export default function Contact() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold text-[#B48608] tracking-widest uppercase block mb-3">
-            CONTACT & LOCATION
+          <span className="text-xs font-black text-[#854D0E] tracking-widest uppercase block mb-3">
+            VISIT OUR STORE OR CALL US
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">
-            Let's Work Together
+          <h2 className="font-display text-3xl sm:text-5xl font-black text-slate-950 tracking-tight">
+            Contact SUN Mats Works
           </h2>
-          <p className="text-base text-slate-600 mt-4 font-normal max-w-2xl mx-auto">
-            Visit our Melapalayam store or send an inquiry for instant pricing and consultation.
+          <p className="text-base sm:text-lg text-slate-700 mt-4 font-semibold max-w-2xl mx-auto">
+            Get instant assistance, request custom quotes, or visit our showroom in Melapalayam.
           </p>
-          <div className="w-16 h-1 bg-gradient-to-r from-[#F5D77F] to-[#D4AF37] mx-auto mt-4 rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#FDE047] via-[#EAB308] to-[#B48608] mx-auto mt-4 rounded-full"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           
-          {/* Left Business Contact Card */}
+          {/* Left Column: Direct Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -35 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5 bg-white p-7 sm:p-9 rounded-3xl border border-slate-200 flex flex-col justify-between shadow-xl"
+            className="lg:col-span-5 bg-white p-7 sm:p-9 rounded-3xl border border-slate-300 flex flex-col justify-between shadow-xl"
           >
             <div>
               <div className="flex items-center gap-3.5 mb-6">
-                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#F5D77F] via-[#D4AF37] to-[#B48608] flex items-center justify-center font-display font-extrabold text-slate-950 text-xl shadow-gold-glow">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#FDE047] via-[#EAB308] to-[#B48608] flex items-center justify-center font-display font-black text-slate-950 text-xl shadow-gold-glow">
                   S
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-slate-900">
+                  <h3 className="font-display font-extrabold text-xl text-slate-950">
                     {BUSINESS_INFO.name}
                   </h3>
-                  <p className="text-xs text-[#B48608] font-semibold">
+                  <p className="text-xs text-[#854D0E] font-black">
                     {BUSINESS_INFO.brandSubtitle}
                   </p>
                 </div>
               </div>
 
-              <p className="text-xs text-slate-500 leading-relaxed mb-8 border-b border-slate-100 pb-6 font-normal">
+              <p className="text-xs text-slate-700 font-semibold leading-relaxed mb-8 border-b border-slate-200 pb-6">
                 {BUSINESS_INFO.categories}
               </p>
 
               {/* Info Items */}
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-amber-50 border border-amber-200 text-[#B48608] shrink-0">
+                  <div className="p-3 rounded-xl bg-amber-100 border border-amber-300 text-[#854D0E] shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">
-                      Store Address
+                    <h4 className="text-xs font-black text-slate-950 uppercase tracking-wider mb-1">
+                      Showroom Address
                     </h4>
-                    <p className="text-sm text-slate-800 font-normal leading-relaxed">
+                    <p className="text-sm text-slate-800 font-bold leading-relaxed">
                       {BUSINESS_INFO.location}
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-amber-50 border border-amber-200 text-[#B48608] shrink-0">
+                  <div className="p-3 rounded-xl bg-amber-100 border border-amber-300 text-[#854D0E] shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">
+                    <h4 className="text-xs font-black text-slate-950 uppercase tracking-wider mb-1">
                       Phone Numbers
                     </h4>
                     <a
                       href={`tel:${BUSINESS_INFO.phone}`}
-                      className="text-sm font-bold text-[#B48608] hover:underline block"
+                      className="text-sm font-black text-[#854D0E] hover:underline block"
                     >
                       {BUSINESS_INFO.phone}
                     </a>
                     <a
                       href={`tel:${BUSINESS_INFO.secondaryPhone}`}
-                      className="text-xs text-slate-600 hover:underline block mt-0.5"
+                      className="text-xs font-bold text-slate-800 hover:underline block mt-0.5"
                     >
                       {BUSINESS_INFO.secondaryPhone}
                     </a>
@@ -126,18 +119,18 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-amber-50 border border-amber-200 text-[#B48608] shrink-0">
+                  <div className="p-3 rounded-xl bg-amber-100 border border-amber-300 text-[#854D0E] shrink-0">
                     <Instagram className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">
+                    <h4 className="text-xs font-black text-slate-950 uppercase tracking-wider mb-1">
                       Instagram Page
                     </h4>
                     <a
                       href={BUSINESS_INFO.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-[#B48608] hover:underline font-bold"
+                      className="text-sm text-[#854D0E] hover:underline font-black"
                     >
                       @sun_mats_works
                     </a>
@@ -145,14 +138,14 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-amber-50 border border-amber-200 text-[#B48608] shrink-0">
+                  <div className="p-3 rounded-xl bg-amber-100 border border-amber-300 text-[#854D0E] shrink-0">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">
+                    <h4 className="text-xs font-black text-slate-950 uppercase tracking-wider mb-1">
                       Working Hours
                     </h4>
-                    <p className="text-sm text-slate-800 font-normal">
+                    <p className="text-sm text-slate-900 font-extrabold">
                       Monday – Saturday: 9:00 AM – 9:00 PM
                     </p>
                   </div>
@@ -160,145 +153,139 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-slate-100">
-              <div className="p-4 rounded-xl bg-slate-50 border border-[#D4AF37]/30 flex items-center justify-between">
-                <span className="text-xs text-slate-600 font-medium">Google Rating</span>
-                <span className="text-xs font-bold text-amber-600">★ 4.9 / 5.0 (19 Reviews)</span>
-              </div>
+            {/* Quick WhatsApp Link Box */}
+            <div className="mt-8 pt-6 border-t border-slate-200">
+              <a
+                href={`https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(BUSINESS_INFO.whatsappMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3.5 px-4 rounded-xl bg-emerald-100 border border-emerald-400 text-emerald-950 font-extrabold text-xs tracking-wider uppercase flex items-center justify-center gap-2 hover:bg-emerald-200 transition-colors shadow-sm"
+              >
+                <MessageSquare className="w-4 h-4 text-emerald-700" />
+                <span>Chat Direct on WhatsApp</span>
+              </a>
             </div>
-
           </motion.div>
 
-          {/* Right Interactive Form */}
+          {/* Right Column: Quote Request Form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 35 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-7 bg-white p-7 sm:p-10 rounded-3xl border border-[#D4AF37]/40 shadow-xl relative"
+            className="lg:col-span-7 bg-white p-7 sm:p-10 rounded-3xl border border-slate-300 shadow-xl"
           >
-            <h3 className="font-display font-bold text-2xl text-slate-900 mb-2">
-              Request a Free Quote
+            <div className="flex items-center gap-2 mb-2">
+              <ShieldCheck className="w-4 h-4 text-[#854D0E]" />
+              <span className="text-xs font-black text-[#854D0E] tracking-wider uppercase">
+                INSTANT INQUIRY
+              </span>
+            </div>
+
+            <h3 className="font-display font-extrabold text-2xl text-slate-950 mb-2">
+              Request a Custom Quote
             </h3>
-            <p className="text-xs text-slate-500 font-normal mb-8">
-              Fill out the form below and our team will get back to you with custom estimates.
+            
+            <p className="text-xs text-slate-700 font-semibold mb-6">
+              Fill out the details below and we will automatically open WhatsApp with your pre-filled inquiry.
             </p>
 
-            {submitted ? (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="p-8 rounded-2xl bg-emerald-50 border border-emerald-300 text-center"
-              >
+            {formSubmitted ? (
+              <div className="py-12 text-center">
                 <div className="w-16 h-16 rounded-full bg-emerald-100 border border-emerald-400 flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle2 className="w-10 h-10 text-emerald-600" />
+                  <CheckCircle2 className="w-8 h-8 text-emerald-700" />
                 </div>
-                <h4 className="font-display font-bold text-2xl text-slate-900 mb-2">
-                  Opening WhatsApp...
+                <h4 className="font-display font-black text-xl text-slate-950 mb-2">
+                  Inquiry Submitted!
                 </h4>
-                <p className="text-sm text-slate-600 font-normal mb-6">
-                  Your quote details have been pre-filled. If WhatsApp didn't open automatically, click the button below to send your request.
+                <p className="text-xs text-slate-700 font-semibold mb-6">
+                  WhatsApp is opening with your details. If it didn't open, click below.
                 </p>
-
-                <div className="flex flex-wrap items-center justify-center gap-3">
-                  <a
-                    href={`https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(`*New Quote Request - SUN Mats Works*\n\n👤 *Name:* ${formData.name.trim()}\n📞 *Phone:* ${formData.phone.trim()}\n🛠️ *Service:* ${formData.service}\n📝 *Details:* ${formData.message.trim() || 'N/A'}`)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-display font-bold text-xs uppercase tracking-wider shadow-lg flex items-center gap-2"
-                  >
-                    <span>Send on WhatsApp</span>
-                  </a>
-
-                  <button
-                    onClick={() => {
-                      setSubmitted(false);
-                      setFormData({ name: '', phone: '', service: 'Wallpaper', message: '' });
-                    }}
-                    className="px-6 py-3 rounded-xl bg-white border border-slate-200 text-xs font-bold text-[#B48608] hover:border-[#D4AF37]"
-                  >
-                    Fill Form Again
-                  </button>
-                </div>
-              </motion.div>
+                <a
+                  href={`https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(`*New Quote Request - SUN Mats Works*\n\n👤 *Name:* ${formData.name.trim()}\n📞 *Phone:* ${formData.phone.trim()}\n🛠️ *Service:* ${formData.service}\n📝 *Details:* ${formData.message.trim() || 'N/A'}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs uppercase shadow-md"
+                >
+                  Open WhatsApp Chat
+                </a>
+              </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 {error && (
-                  <div className="p-3 rounded-lg bg-red-50 border border-red-300 text-red-600 text-xs flex items-center gap-2 font-medium">
+                  <div className="p-3 rounded-lg bg-red-50 border border-red-300 text-red-700 text-xs flex items-center gap-2 font-bold">
                     <AlertCircle className="w-4 h-4 shrink-0" />
                     <span>{error}</span>
                   </div>
                 )}
 
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                    Your Name *
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Enter your full name"
-                    className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-base sm:text-sm focus:border-[#D4AF37] focus:outline-none transition-colors"
-                    required
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-[11px] font-extrabold text-slate-800 uppercase tracking-wider mb-1.5">
+                      Your Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      placeholder="e.g. Mohamed Ismail"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-950 text-xs font-semibold focus:border-[#854D0E] focus:outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-[11px] font-extrabold text-slate-800 uppercase tracking-wider mb-1.5">
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      placeholder="+91 90873 68191"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-950 text-xs font-semibold focus:border-[#854D0E] focus:outline-none"
+                    />
+                  </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="+91 90000 00000"
-                    className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-base sm:text-sm focus:border-[#D4AF37] focus:outline-none transition-colors"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                  <label className="block text-[11px] font-extrabold text-slate-800 uppercase tracking-wider mb-1.5">
                     Service Required
                   </label>
                   <select
-                    name="service"
                     value={formData.service}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-base sm:text-sm focus:border-[#D4AF37] focus:outline-none transition-colors"
+                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-950 text-xs font-semibold focus:border-[#854D0E] focus:outline-none"
                   >
-                    <option value="Wallpaper">Wallpaper Installation</option>
-                    <option value="Car Mats">Custom Car Mats (7D/9D)</option>
-                    <option value="Floor Mats">Commercial & Home Floor Mats</option>
+                    <option value="Car Mats">Custom 7D/9D Car Mats</option>
+                    <option value="Floor Mats">Heavy Duty Floor Mats</option>
+                    <option value="Wallpaper">Wallpaper & Wall Design</option>
                     <option value="Carpet">Plush & Mosque Carpet</option>
                     <option value="Artificial Grass">Artificial Grass Turf</option>
-                    <option value="Interior Solutions">Interior Surface Solutions / Flooring</option>
+                    <option value="Interior Solutions">Interior Surface Solutions</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                    Project Details / Message
+                  <label className="block text-[11px] font-extrabold text-slate-800 uppercase tracking-wider mb-1.5">
+                    Project Details / Requirements
                   </label>
                   <textarea
-                    name="message"
                     rows="4"
                     value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Tell us about your room size, car model, or installation preferences..."
-                    className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-base sm:text-sm focus:border-[#D4AF37] focus:outline-none transition-colors"
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    placeholder="Car model, room dimensions, or custom preferences..."
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-950 text-xs font-semibold focus:border-[#854D0E] focus:outline-none"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-[#F5D77F] via-[#D4AF37] to-[#B48608] text-slate-950 font-display font-bold text-sm tracking-wider uppercase flex items-center justify-center gap-2 shadow-gold-glow hover:shadow-gold-glow-lg transition-all"
+                  className="w-full py-4 rounded-xl bg-gradient-to-r from-[#FDE047] via-[#EAB308] to-[#B48608] text-slate-950 font-display font-black text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-gold-glow hover:shadow-gold-glow-lg transition-all"
                 >
                   <Send className="w-4 h-4" />
-                  <span>Request a Quote</span>
+                  <span>Send Quote Request</span>
                 </button>
               </form>
             )}
@@ -306,7 +293,6 @@ export default function Contact() {
           </motion.div>
 
         </div>
-
       </div>
     </section>
   );

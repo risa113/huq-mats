@@ -18,7 +18,7 @@ export default function FeaturedProject() {
     <section className="py-24 bg-[#F8FAFC] relative overflow-hidden border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="rounded-3xl bg-white border border-[#D4AF37]/40 p-6 sm:p-10 lg:p-12 overflow-hidden shadow-xl relative">
+        <div className="rounded-3xl bg-white border border-slate-300 p-6 sm:p-10 lg:p-12 overflow-hidden shadow-2xl relative">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
@@ -35,9 +35,9 @@ export default function FeaturedProject() {
                 alt="SUN Mats Works Showcase Project"
                 className="w-full h-[280px] sm:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-100"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-60"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent opacity-70"></div>
               
-              <div className="absolute top-4 left-4 px-4 py-2 rounded-full bg-white/95 border border-[#D4AF37] text-xs font-bold text-[#B48608] tracking-widest uppercase shadow-sm">
+              <div className="absolute top-4 left-4 px-4 py-2 rounded-full bg-white border-2 border-amber-500 text-xs font-black text-amber-950 tracking-widest uppercase shadow-md">
                 FEATURED INSTALLATION
               </div>
             </motion.div>
@@ -50,35 +50,35 @@ export default function FeaturedProject() {
               transition={{ duration: 0.7 }}
               className="lg:col-span-5 flex flex-col justify-center"
             >
-              <span className="text-xs font-bold text-[#B48608] tracking-widest uppercase mb-2">
+              <span className="text-xs font-black text-[#854D0E] tracking-widest uppercase mb-2">
                 PROJECT SPOTLIGHT
               </span>
 
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="font-display text-3xl sm:text-4xl font-black text-slate-950 mb-6">
                 {FEATURED_PROJECT.title}
               </h2>
 
-              <p className="text-sm text-slate-600 font-normal leading-relaxed mb-8">
+              <p className="text-sm text-slate-700 font-medium leading-relaxed mb-8">
                 {FEATURED_PROJECT.description}
               </p>
 
               {/* Specifications Box */}
-              <div className="space-y-4 mb-8 bg-slate-50 p-5 rounded-xl border border-slate-200">
-                <div className="flex items-center justify-between text-xs pb-3 border-b border-slate-200">
-                  <span className="text-slate-500 font-medium">Project Type</span>
-                  <span className="font-semibold text-slate-900">{FEATURED_PROJECT.projectType}</span>
+              <div className="space-y-4 mb-8 bg-slate-100/90 p-5 rounded-xl border border-slate-300">
+                <div className="flex items-center justify-between text-xs pb-3 border-b border-slate-300">
+                  <span className="text-slate-700 font-bold">Project Type</span>
+                  <span className="font-extrabold text-slate-950">{FEATURED_PROJECT.projectType}</span>
                 </div>
-                <div className="flex items-center justify-between text-xs pb-3 border-b border-slate-200">
-                  <span className="text-slate-500 font-medium">Service</span>
-                  <span className="font-semibold text-[#B48608]">{FEATURED_PROJECT.service}</span>
+                <div className="flex items-center justify-between text-xs pb-3 border-b border-slate-300">
+                  <span className="text-slate-700 font-bold">Service</span>
+                  <span className="font-black text-[#854D0E]">{FEATURED_PROJECT.service}</span>
                 </div>
-                <div className="flex items-center justify-between text-xs pb-3 border-b border-slate-200">
-                  <span className="text-slate-500 font-medium">Location</span>
-                  <span className="font-semibold text-slate-900">{FEATURED_PROJECT.location}</span>
+                <div className="flex items-center justify-between text-xs pb-3 border-b border-slate-300">
+                  <span className="text-slate-700 font-bold">Location</span>
+                  <span className="font-extrabold text-slate-950">{FEATURED_PROJECT.location}</span>
                 </div>
                 <div className="flex items-center justify-between text-xs">
-                  <span className="text-slate-500 font-medium">Execution</span>
-                  <span className="font-semibold text-slate-900">{FEATURED_PROJECT.installation}</span>
+                  <span className="text-slate-700 font-bold">Execution</span>
+                  <span className="font-extrabold text-slate-950">{FEATURED_PROJECT.installation}</span>
                 </div>
               </div>
 
@@ -86,7 +86,7 @@ export default function FeaturedProject() {
               <a
                 href="#projects"
                 onClick={handleScrollToProjects}
-                className="w-full sm:w-auto px-7 py-4 rounded-xl bg-gradient-to-r from-[#F5D77F] via-[#D4AF37] to-[#B48608] text-slate-950 font-display font-bold text-xs tracking-wider uppercase text-center flex items-center justify-center gap-3 shadow-gold-glow hover:shadow-gold-glow-lg transition-all"
+                className="w-full sm:w-auto px-7 py-4 rounded-xl bg-gradient-to-r from-[#FDE047] via-[#EAB308] to-[#B48608] text-slate-950 font-display font-black text-xs tracking-wider uppercase text-center flex items-center justify-center gap-3 shadow-gold-glow hover:shadow-gold-glow-lg transition-all"
               >
                 <span>View More Projects</span>
                 <ArrowRight className="w-4 h-4" />

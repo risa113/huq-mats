@@ -39,24 +39,24 @@
   box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
 }
 
-/* Premium Gold Text Gradient for Light Theme */
+/* Premium Deep Gold Text Gradient for High Contrast Light Theme */
 .gold-text-gradient {
-  background: linear-gradient(135deg, #B48608 0%, #D4AF37 50%, #8C6808 100%);
+  background: linear-gradient(135deg, #854D0E 0%, #A16207 45%, #B48608 75%, #713F12 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* High-Contrast Gold Button */
 .gold-btn {
-  background: linear-gradient(135deg, #F5D77F 0%, #D4AF37 50%, #B48608 100%);
-  color: #0F172A;
-  font-weight: 700;
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+  background: linear-gradient(135deg, #FDE047 0%, #EAB308 50%, #B48608 100%);
+  color: #020617;
+  font-weight: 800;
+  box-shadow: 0 4px 20px rgba(202, 138, 4, 0.35);
   transition: all 0.3s ease;
 }
 
 .gold-btn:hover {
-  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+  box-shadow: 0 6px 25px rgba(202, 138, 4, 0.55);
   transform: translateY(-2px);
 }
 

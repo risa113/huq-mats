@@ -12,16 +12,16 @@ export default function WhyChooseUs() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold text-[#B48608] tracking-widest uppercase block mb-3">
+          <span className="text-xs font-black text-[#854D0E] tracking-widest uppercase block mb-3">
             THE SUN MATS DIFFERENCE
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">
+          <h2 className="font-display text-3xl sm:text-5xl font-black text-slate-950 tracking-tight">
             Why Choose SUN Mats Works?
           </h2>
-          <p className="text-base text-slate-600 mt-4 font-normal max-w-2xl mx-auto">
+          <p className="text-base text-slate-700 mt-4 font-semibold max-w-2xl mx-auto">
             Delivering uncompromised craftsmanship, fair local pricing, and long-lasting surface beauty.
           </p>
-          <div className="w-16 h-1 bg-gradient-to-r from-[#F5D77F] to-[#D4AF37] mx-auto mt-4 rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#FDE047] via-[#EAB308] to-[#B48608] mx-auto mt-4 rounded-full"></div>
         </div>
 
         {/* 6 Grid Benefits */}
@@ -33,22 +33,22 @@ export default function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="p-7 sm:p-8 rounded-2xl bg-white border border-slate-200 hover:border-[#D4AF37] transition-all duration-300 group relative shadow-md hover:shadow-xl"
+              className="p-7 sm:p-8 rounded-2xl bg-white border border-slate-300 hover:border-[#854D0E] transition-all duration-300 group relative shadow-md hover:shadow-2xl"
             >
               {/* Large Gold Number */}
-              <div className="font-display font-extrabold text-4xl sm:text-5xl gold-text-gradient mb-4 opacity-90 group-hover:opacity-100 transition-opacity">
+              <div className="font-display font-black text-4xl sm:text-5xl gold-text-gradient mb-4 opacity-100 transition-opacity">
                 {item.num}
               </div>
 
-              <h3 className="font-display font-bold text-xl text-slate-900 group-hover:text-[#B48608] transition-colors mb-3">
+              <h3 className="font-display font-extrabold text-xl text-slate-950 group-hover:text-[#854D0E] transition-colors mb-3">
                 {item.title}
               </h3>
 
-              <p className="text-sm text-slate-600 font-normal leading-relaxed">
+              <p className="text-sm text-slate-700 font-medium leading-relaxed">
                 {item.description}
               </p>
 
-              <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#D4AF37]/15 to-transparent rounded-tr-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#EAB308]/20 to-transparent rounded-tr-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </motion.div>
           ))}
         </div>

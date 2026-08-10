@@ -70,21 +70,21 @@ export default function Navbar({ onOpenQuote }) {
             onClick={(e) => handleNavClick(e, '#home')}
             className="flex items-center gap-3 group focus:outline-none"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#F5D77F] via-[#D4AF37] to-[#B48608] flex items-center justify-center shadow-gold-glow group-hover:scale-105 transition-transform duration-300">
-              <span className="font-display font-extrabold text-slate-950 text-xl tracking-tighter">S</span>
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FDE047] via-[#EAB308] to-[#B48608] flex items-center justify-center shadow-gold-glow group-hover:scale-105 transition-transform duration-300">
+              <span className="font-display font-black text-slate-950 text-xl tracking-tighter">S</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-bold text-base sm:text-lg tracking-wider text-slate-900 group-hover:text-[#B48608] transition-colors">
-                SUN <span className="text-[#B48608] font-semibold">MATS WORKS</span>
+              <span className="font-display font-extrabold text-base sm:text-lg tracking-wider text-slate-950 group-hover:text-[#854D0E] transition-colors">
+                SUN <span className="text-[#854D0E] font-bold">MATS WORKS</span>
               </span>
-              <span className="text-[10px] text-slate-500 tracking-widest uppercase font-medium">
+              <span className="text-[10px] text-slate-600 tracking-widest uppercase font-semibold">
                 Tirunelveli • Melapalayam
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-slate-100/90 border border-slate-200/80 px-4 py-1.5 rounded-full shadow-inner">
+          <nav className="hidden md:flex items-center gap-1 bg-slate-100 border border-slate-300/80 px-4 py-1.5 rounded-full shadow-inner">
             {navLinks.map((link) => {
               const sectionId = link.href.replace('#', '');
               const isActive = activeSection === sectionId;
@@ -93,15 +93,15 @@ export default function Navbar({ onOpenQuote }) {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`relative px-4 py-1.5 text-sm font-medium transition-all duration-300 rounded-full ${
+                  className={`relative px-4 py-1.5 text-sm transition-all duration-300 rounded-full ${
                     isActive
-                      ? 'text-[#B48608] font-bold bg-white shadow-sm'
-                      : 'text-slate-600 hover:text-slate-900'
+                      ? 'text-[#854D0E] font-extrabold bg-white shadow-sm'
+                      : 'text-slate-700 hover:text-slate-950 font-semibold'
                   }`}
                 >
                   {link.name}
                   {isActive && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-[#D4AF37] rounded-full shadow-[0_0_8px_#D4AF37]"></span>
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-[#854D0E] rounded-full shadow-[0_0_8px_#854D0E]"></span>
                   )}
                 </a>
               );
@@ -112,15 +112,15 @@ export default function Navbar({ onOpenQuote }) {
           <div className="hidden lg:flex items-center gap-4">
             <a
               href={`tel:${BUSINESS_INFO.phone}`}
-              className="flex items-center gap-2 text-xs font-semibold text-slate-700 hover:text-[#B48608] transition-colors px-3.5 py-2 bg-white border border-slate-200 rounded-full hover:border-[#D4AF37]/50 shadow-sm"
+              className="flex items-center gap-2 text-xs font-bold text-slate-800 hover:text-[#854D0E] transition-colors px-3.5 py-2 bg-white border border-slate-300 rounded-full hover:border-[#854D0E]/50 shadow-sm"
             >
-              <Phone className="w-3.5 h-3.5 text-[#B48608]" />
+              <Phone className="w-3.5 h-3.5 text-[#854D0E]" />
               <span>{BUSINESS_INFO.phone}</span>
             </a>
 
             <button
               onClick={onOpenQuote}
-              className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#F5D77F] via-[#D4AF37] to-[#B48608] text-slate-950 font-display font-bold text-xs tracking-wider uppercase shadow-gold-glow hover:shadow-gold-glow-lg hover:scale-105 transition-all duration-300"
+              className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#FDE047] via-[#EAB308] to-[#B48608] text-slate-950 font-display font-extrabold text-xs tracking-wider uppercase shadow-gold-glow hover:shadow-gold-glow-lg hover:scale-105 transition-all duration-300"
             >
               Get a Free Quote
             </button>
@@ -130,14 +130,14 @@ export default function Navbar({ onOpenQuote }) {
           <div className="flex lg:hidden items-center gap-2.5">
             <button
               onClick={onOpenQuote}
-              className="px-3.5 py-1.5 bg-gradient-to-r from-[#F5D77F] to-[#D4AF37] text-slate-950 text-xs font-bold uppercase rounded-full tracking-wider hover:scale-105 transition-all shadow-gold-glow"
+              className="px-3.5 py-1.5 bg-gradient-to-r from-[#FDE047] to-[#EAB308] text-slate-950 text-xs font-black uppercase rounded-full tracking-wider hover:scale-105 transition-all shadow-gold-glow"
             >
               Quote
             </button>
             
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-[#B48608] focus:outline-none shadow-sm"
+              className="p-2 rounded-xl bg-white border border-slate-300 text-slate-900 hover:text-[#854D0E] focus:outline-none shadow-sm"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -148,13 +148,13 @@ export default function Navbar({ onOpenQuote }) {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 border-b border-slate-200 py-6 px-6 shadow-2xl backdrop-blur-2xl animate-fadeIn">
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-300 py-6 px-6 shadow-2xl backdrop-blur-2xl animate-fadeIn">
           <div className="flex flex-col gap-4">
             <div className="pb-3 border-b border-slate-200 flex items-center justify-between">
-              <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">
+              <span className="text-xs font-bold text-slate-600 uppercase tracking-widest">
                 Navigation
               </span>
-              <span className="flex items-center gap-1 text-[11px] text-[#B48608] font-semibold">
+              <span className="flex items-center gap-1 text-[11px] text-[#854D0E] font-bold">
                 <ShieldCheck className="w-3.5 h-3.5" /> 4.9★ Rated Local Shop
               </span>
             </div>
@@ -164,10 +164,10 @@ export default function Navbar({ onOpenQuote }) {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="flex items-center justify-between text-base font-medium text-slate-800 hover:text-[#B48608] py-2 border-b border-slate-100"
+                className="flex items-center justify-between text-base font-bold text-slate-900 hover:text-[#854D0E] py-2 border-b border-slate-100"
               >
                 <span>{link.name}</span>
-                <ChevronRight className="w-4 h-4 text-[#B48608]" />
+                <ChevronRight className="w-4 h-4 text-[#854D0E]" />
               </a>
             ))}
 
@@ -177,7 +177,7 @@ export default function Navbar({ onOpenQuote }) {
                   setMobileMenuOpen(false);
                   onOpenQuote();
                 }}
-                className="w-full py-3 bg-gradient-to-r from-[#F5D77F] via-[#D4AF37] to-[#B48608] text-slate-950 font-display font-bold text-sm tracking-wider uppercase rounded-xl shadow-gold-glow"
+                className="w-full py-3 bg-gradient-to-r from-[#FDE047] via-[#EAB308] to-[#B48608] text-slate-950 font-display font-extrabold text-sm tracking-wider uppercase rounded-xl shadow-gold-glow"
               >
                 Get a Free Quote
               </button>
@@ -185,16 +185,16 @@ export default function Navbar({ onOpenQuote }) {
               <div className="flex items-center justify-between pt-2">
                 <a
                   href={`tel:${BUSINESS_INFO.phone}`}
-                  className="flex items-center gap-2 text-xs text-slate-700 hover:text-[#B48608]"
+                  className="flex items-center gap-2 text-xs text-slate-800 font-bold hover:text-[#854D0E]"
                 >
-                  <Phone className="w-3.5 h-3.5 text-[#B48608]" /> {BUSINESS_INFO.phone}
+                  <Phone className="w-3.5 h-3.5 text-[#854D0E]" /> {BUSINESS_INFO.phone}
                 </a>
 
                 <a
                   href={`https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(BUSINESS_INFO.whatsappMessage)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-xs text-emerald-600 font-semibold hover:underline"
+                  className="flex items-center gap-1.5 text-xs text-emerald-700 font-extrabold hover:underline"
                 >
                   <MessageSquare className="w-3.5 h-3.5" /> WhatsApp Us
                 </a>
