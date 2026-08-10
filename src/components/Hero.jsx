@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, MessageSquare, Sparkles, ShieldCheck, MapPin } from 'lucide-react';
-import { BUSINESS_INFO, HERO_DATA } from '../data/businessData';
+import { BUSINESS_INFO, HERO_DATA, getImageUrl } from '../data/businessData';
 
 export default function Hero({ onOpenQuote }) {
   const handleScrollToServices = (e) => {
@@ -20,9 +20,9 @@ export default function Hero({ onOpenQuote }) {
       {/* Background Image with Luxury Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={HERO_DATA.bgImage}
+          src={getImageUrl(HERO_DATA.bgImage)}
           alt="SUN Mats Works Luxury Interior Surface Showcase"
-          className="w-full h-full object-cover object-center scale-105 animate-pulse-subtle filter brightness-90"
+          className="w-full h-full object-cover object-center filter brightness-90"
         />
         {/* Gradient dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#080808]/95 via-[#080808]/80 to-[#080808]/60"></div>

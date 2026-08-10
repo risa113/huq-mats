@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight, Shield, Award, MapPin } from 'lucide-react';
-import { BUSINESS_INFO } from '../data/businessData';
+import { BUSINESS_INFO, getImageUrl } from '../data/businessData';
 
 export default function About() {
   const highlights = [
@@ -55,9 +55,9 @@ export default function About() {
           >
             <div className="relative rounded-2xl overflow-hidden border border-[#C9A45C]/30 shadow-2xl group">
               <img
-                src="/images/client_wallpaper_rolls.png"
+                src={getImageUrl('./images/client_wallpaper_rolls.png')}
                 alt="SUN Mats Works Wallpaper & Material Inventory Showcase"
-                className="w-full h-[450px] sm:h-[520px] object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-[280px] sm:h-[480px] object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent opacity-80"></div>
               

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FEATURED_PROJECT } from '../data/businessData';
+import { FEATURED_PROJECT, getImageUrl } from '../data/businessData';
 import { ArrowRight, CheckCircle, MapPin, Wrench } from 'lucide-react';
 
 export default function FeaturedProject() {
@@ -31,9 +31,9 @@ export default function FeaturedProject() {
               className="lg:col-span-7 relative group rounded-2xl overflow-hidden"
             >
               <img
-                src={FEATURED_PROJECT.image}
+                src={getImageUrl(FEATURED_PROJECT.image)}
                 alt="SUN Mats Works Showcase Project"
-                className="w-full h-[350px] sm:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95"
+                className="w-full h-[280px] sm:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent opacity-70"></div>
               

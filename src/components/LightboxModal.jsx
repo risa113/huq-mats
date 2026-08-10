@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, MapPin, Tag, ShieldCheck } from 'lucide-react';
+import { getImageUrl } from '../data/businessData';
 
 export default function LightboxModal({ project, projects, onClose, onPrev, onNext }) {
   useEffect(() => {
@@ -52,11 +53,11 @@ export default function LightboxModal({ project, projects, onClose, onPrev, onNe
           </button>
 
           {/* Left Column: Image Viewer */}
-          <div className="relative lg:w-3/5 bg-black flex items-center justify-center min-h-[300px] lg:min-h-[500px]">
+          <div className="relative lg:w-3/5 bg-black flex items-center justify-center min-h-[250px] lg:min-h-[500px]">
             <img
-              src={project.image}
+              src={getImageUrl(project.image)}
               alt={project.title}
-              className="w-full h-full object-contain max-h-[70vh]"
+              className="w-full h-full object-contain max-h-[60vh] lg:max-h-[70vh]"
             />
 
             {/* Previous Button */}

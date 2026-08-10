@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Check } from 'lucide-react';
-import { SERVICES } from '../data/businessData';
+import { SERVICES, getImageUrl } from '../data/businessData';
 
 export default function Services({ onSelectServiceCategory, onOpenQuote }) {
   const handleViewProjects = (categoryTitle) => {
@@ -47,9 +47,9 @@ export default function Services({ onSelectServiceCategory, onOpenQuote }) {
               className="group relative flex flex-col bg-[#171717] rounded-2xl overflow-hidden border border-[#262626] hover:border-[#C9A45C]/60 hover:shadow-gold-glow transition-all duration-500 h-full"
             >
               {/* Image Container */}
-              <div className="relative h-60 overflow-hidden">
+              <div className="relative h-52 sm:h-60 overflow-hidden">
                 <img
-                  src={service.image}
+                  src={getImageUrl(service.image)}
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter brightness-95 group-hover:brightness-105"
                 />

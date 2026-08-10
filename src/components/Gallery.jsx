@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Maximize2, ShieldCheck, Tag } from 'lucide-react';
-import { PROJECTS_GALLERY } from '../data/businessData';
+import { PROJECTS_GALLERY, getImageUrl } from '../data/businessData';
 import LightboxModal from './LightboxModal';
 
 export default function Gallery({ selectedCategory, onSelectCategory }) {
@@ -93,9 +93,9 @@ export default function Gallery({ selectedCategory, onSelectCategory }) {
               className="group relative bg-[#171717] rounded-2xl overflow-hidden border border-[#262626] hover:border-[#C9A45C]/60 hover:shadow-gold-glow cursor-pointer transition-all duration-500 flex flex-col h-full"
             >
               {/* Image Container */}
-              <div className="relative h-64 sm:h-72 overflow-hidden bg-black">
+              <div className="relative h-56 sm:h-72 overflow-hidden bg-black">
                 <img
-                  src={project.image}
+                  src={getImageUrl(project.image)}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 filter brightness-95 group-hover:brightness-105"
                 />

@@ -1,3 +1,11 @@
+export const getImageUrl = (path) => {
+  if (!path) return '';
+  const cleanPath = path.replace(/^\.\//, '').replace(/^\//, '');
+  const baseUrl = import.meta.env.BASE_URL || '/';
+  const formattedBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+  return `${formattedBase}${cleanPath}`;
+};
+
 export const BUSINESS_INFO = {
   name: "SUN Mats Works",
   brandSubtitle: "SUN Wallpaper – CarMat – Floor Mat",
