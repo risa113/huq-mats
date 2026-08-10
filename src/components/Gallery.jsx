@@ -84,8 +84,8 @@ export default function Gallery({ selectedCategory, onSelectCategory }) {
           })}
         </div>
 
-        {/* Perfectly Arranged 3x3 Grid (3 columns on desktop = 3 complete rows of 3) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+        {/* Perfectly Divided 3-Column Grid (3 columns on medium/desktop = 3 complete rows of 3 = 9 total) */}
+        <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch ${filteredProjects.length < 3 ? 'justify-center max-w-4xl mx-auto' : ''}`}>
           {filteredProjects.map((project, idx) => (
             <motion.div
               key={project.id}
