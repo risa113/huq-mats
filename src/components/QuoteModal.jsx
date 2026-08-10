@@ -74,14 +74,26 @@ export default function QuoteModal({ isOpen, onClose }) {
             <X className="w-5 h-5" />
           </button>
 
-          <div className="flex items-center gap-2 mb-2">
-            <ShieldCheck className="w-4 h-4 text-[#B48608]" />
-            <span className="text-xs font-bold text-[#B48608] tracking-wider uppercase">
-              SUN MATS WORKS QUOTE
-            </span>
+          {/* Official Logo Header */}
+          <div className="flex items-center gap-3 mb-4 pb-3 border-b border-slate-100">
+            <div className="p-1 rounded-xl bg-white border border-amber-300 shadow-sm">
+              <img
+                src={getImageUrl('./images/sun_mats_logo.jpg')}
+                alt="SUN Mats Works Logo"
+                className="h-10 w-auto object-contain"
+              />
+            </div>
+            <div>
+              <span className="text-xs font-black text-[#854D0E] tracking-wider uppercase block">
+                SUN MATS WORKS
+              </span>
+              <span className="text-[10px] text-slate-500 font-bold uppercase">
+                STYLE • QUALITY • COMFORT
+              </span>
+            </div>
           </div>
 
-          <h3 className="font-display font-bold text-2xl text-slate-900 mb-2">
+          <h3 className="font-display font-black text-2xl text-slate-950 mb-2">
             Get a Free Instant Quote
           </h3>
 

@@ -24,13 +24,22 @@ export default function Footer() {
           
           {/* Brand Column */}
           <div className="lg:col-span-4">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#F5D77F] to-[#D4AF37] flex items-center justify-center font-display font-extrabold text-slate-950 text-lg shadow-md">
-                S
+            <div className="flex items-center gap-3.5 mb-4">
+              <div className="p-1.5 rounded-2xl bg-white border border-amber-300 shadow-md">
+                <img
+                  src={getImageUrl('./images/sun_mats_logo.jpg')}
+                  alt="SUN Mats Works Official Logo"
+                  className="h-12 sm:h-14 w-auto object-contain"
+                />
               </div>
-              <span className="font-display font-bold text-lg text-white tracking-wider">
-                SUN <span className="text-[#F5D77F]">MATS WORKS</span>
-              </span>
+              <div className="flex flex-col">
+                <span className="font-display font-black text-xl text-white tracking-wider">
+                  SUN <span className="text-[#FDE047]">MATS WORKS</span>
+                </span>
+                <span className="text-[10px] text-amber-400 font-extrabold tracking-widest uppercase">
+                  WALLPAPER • CAR MAT • FLOOR MAT
+                </span>
+              </div>
             </div>
 
             <p className="text-xs text-slate-400 leading-relaxed mb-6 font-normal">
@@ -42,14 +51,14 @@ export default function Footer() {
                 href={BUSINESS_INFO.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-slate-800 border border-slate-700 text-[#F5D77F] hover:text-white hover:border-[#D4AF37] transition-colors"
+                className="p-2.5 rounded-full bg-slate-800 border border-slate-700 text-[#FDE047] hover:text-white hover:border-[#EAB308] transition-colors shadow-sm"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
               </a>
               <a
                 href={`tel:${BUSINESS_INFO.phone}`}
-                className="p-2.5 rounded-full bg-slate-800 border border-slate-700 text-[#F5D77F] hover:text-white hover:border-[#D4AF37] transition-colors"
+                className="p-2.5 rounded-full bg-slate-800 border border-slate-700 text-[#FDE047] hover:text-white hover:border-[#EAB308] transition-colors shadow-sm"
                 aria-label="Phone"
               >
                 <Phone className="w-4 h-4" />
@@ -68,7 +77,7 @@ export default function Footer() {
                   <a
                     href={`#${item.toLowerCase()}`}
                     onClick={(e) => handleNavClick(e, `#${item.toLowerCase()}`)}
-                    className="hover:text-[#F5D77F] transition-colors"
+                    className="hover:text-[#FDE047] transition-colors"
                   >
                     {item}
                   </a>
@@ -91,7 +100,7 @@ export default function Footer() {
                 'Artificial Grass & Turf',
                 'Interior Surface Solutions'
               ].map((service) => (
-                <li key={service} className="hover:text-[#F5D77F] transition-colors">
+                <li key={service} className="hover:text-[#FDE047] transition-colors">
                   {service}
                 </li>
               ))}
@@ -105,13 +114,13 @@ export default function Footer() {
             </h4>
             <div className="space-y-3 text-xs">
               <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-[#F5D77F] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#FDE047] shrink-0 mt-0.5" />
                 <span className="leading-relaxed text-slate-300">
                   MPR9+P2W, Nethaji Rd, Engineers Colony, Raja Nagar, Melapalayam, Tirunelveli 627005
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#F5D77F] shrink-0" />
+                <Phone className="w-4 h-4 text-[#FDE047] shrink-0" />
                 <a href={`tel:${BUSINESS_INFO.phone}`} className="hover:underline text-white font-medium">
                   {BUSINESS_INFO.phone}
                 </a>
@@ -125,11 +134,19 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-          <p className="text-slate-400">
+        {/* Bottom Bar with Developer Credit */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+          <p className="text-slate-400 text-center md:text-left">
             © 2026 SUN Mats Works. All Rights Reserved.
           </p>
+
+          {/* Prominent TM Digital Marketing Credit Badge */}
+          <div className="px-4 py-2 rounded-full bg-slate-800/90 border border-amber-400/40 text-slate-300 font-semibold text-xs flex items-center gap-2 shadow-md hover:border-amber-400 transition-colors">
+            <span>Website Built by</span>
+            <span className="font-black text-[#FDE047] tracking-wide uppercase">
+              TM Digital Marketing
+            </span>
+          </div>
 
           <div className="flex items-center gap-6 text-slate-400">
             <button

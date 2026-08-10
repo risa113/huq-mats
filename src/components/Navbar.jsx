@@ -70,14 +70,18 @@ export default function Navbar({ onOpenQuote }) {
             onClick={(e) => handleNavClick(e, '#home')}
             className="flex items-center gap-3 group focus:outline-none"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FDE047] via-[#EAB308] to-[#B48608] flex items-center justify-center shadow-gold-glow group-hover:scale-105 transition-transform duration-300">
-              <span className="font-display font-black text-slate-950 text-xl tracking-tighter">S</span>
+            <div className="h-11 sm:h-13 flex items-center justify-center p-1 rounded-xl bg-white border border-amber-400/60 shadow-md group-hover:scale-105 transition-transform duration-300">
+              <img
+                src={getImageUrl('./images/sun_mats_logo.jpg')}
+                alt="SUN Mats Works Official Logo"
+                className="h-9 sm:h-11 w-auto object-contain"
+              />
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-extrabold text-base sm:text-lg tracking-wider text-slate-950 group-hover:text-[#854D0E] transition-colors">
+              <span className="font-display font-black text-base sm:text-lg tracking-wider text-slate-950 group-hover:text-[#854D0E] transition-colors">
                 SUN <span className="text-[#854D0E] font-bold">MATS WORKS</span>
               </span>
-              <span className="text-[10px] text-slate-600 tracking-widest uppercase font-semibold">
+              <span className="text-[10px] text-slate-600 tracking-widest uppercase font-extrabold">
                 Tirunelveli • Melapalayam
               </span>
             </div>
@@ -198,6 +202,11 @@ export default function Navbar({ onOpenQuote }) {
                 >
                   <MessageSquare className="w-3.5 h-3.5" /> WhatsApp Us
                 </a>
+              </div>
+
+              {/* Developer Credit in Mobile Drawer */}
+              <div className="mt-2 text-center text-[11px] font-bold text-slate-700 pt-2 border-t border-slate-200">
+                Built by <span className="text-[#854D0E] font-black">TM Digital Marketing</span>
               </div>
             </div>
           </div>
