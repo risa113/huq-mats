@@ -4,8 +4,8 @@
 
 @layer base {
   body {
-    background-color: #080808;
-    color: #FFFFFF;
+    background-color: #0A0B0E;
+    color: #F8FAFC;
     font-family: 'Plus Jakarta Sans', sans-serif;
   }
 
@@ -14,33 +14,47 @@
   }
 }
 
-/* Custom Glassmorphism */
+/* Custom Luxury Glassmorphism & Panel Styling */
 .glass-panel {
-  background: rgba(23, 23, 23, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(201, 164, 92, 0.18);
+  background: rgba(19, 21, 28, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
 .glass-nav {
-  background: rgba(8, 8, 8, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 11, 14, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
 
 .glass-nav-solid {
-  background: rgba(17, 17, 17, 0.96);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(201, 164, 92, 0.25);
+  background: rgba(15, 17, 23, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
 }
 
-/* Metallic Gold Text Gradient */
+/* Metallic Champagne Gold Text Gradient */
 .gold-text-gradient {
-  background: linear-gradient(135deg, #FFF0CA 0%, #E6C982 35%, #C9A45C 70%, #9A7B39 100%);
+  background: linear-gradient(135deg, #FFF5D0 0%, #F3D379 30%, #D4AF37 65%, #AA8222 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Luxury Button Gradient */
+.gold-btn-gradient {
+  background: linear-gradient(135deg, #F5D77F 0%, #D4AF37 50%, #9C7722 100%);
+  color: #0A0B0E;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.gold-btn-gradient:hover {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.45);
+  transform: translateY(-2px);
 }
 
 .gold-border-glow {
@@ -53,7 +67,7 @@
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(230, 201, 130, 0.4), rgba(201, 164, 92, 0.1), rgba(154, 123, 57, 0.3));
+  background: linear-gradient(135deg, rgba(243, 211, 121, 0.5), rgba(212, 175, 55, 0.15), rgba(156, 119, 34, 0.4));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -66,14 +80,23 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #080808;
+  background: #0A0B0E;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #262626;
+  background: #1C1F28;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #C9A45C;
+  background: #D4AF37;
+}
+
+/* Hide scrollbar for clean horizontal pill sliders */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
