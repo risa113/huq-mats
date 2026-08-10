@@ -17,42 +17,44 @@ export default function Hero({ onOpenQuote }) {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
       
-      {/* Background Image with High Contrast Light Overlay */}
+      {/* Background Image - Richly Visible */}
       <div className="absolute inset-0 z-0">
         <img
           src={getImageUrl(HERO_DATA.bgImage)}
           alt="SUN Mats Works Luxury Interior Surface Showcase"
-          className="w-full h-full object-cover object-center filter brightness-105"
+          className="w-full h-full object-cover object-center filter brightness-100 contrast-105"
         />
-        {/* Gradient light overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/95 to-slate-50/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-50 via-transparent to-slate-50/90"></div>
+        {/* Soft light vignette overlay allowing full background image visibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-50/90 via-slate-50/60 to-slate-50/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-50 via-transparent to-slate-50/50"></div>
       </div>
 
       {/* Decorative Gold Radial Glows */}
-      <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#D4AF37]/15 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#F3D379]/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#D4AF37]/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#F3D379]/25 rounded-full blur-3xl pointer-events-none"></div>
 
       {/* Animated Gold Frame Geometry Lines */}
-      <div className="absolute inset-x-8 top-32 bottom-12 border border-[#854D0E]/20 pointer-events-none rounded-2xl hidden lg:block">
-        <div className="absolute -top-1 -left-1 w-3 h-3 border-t-2 border-l-2 border-[#854D0E]"></div>
-        <div className="absolute -top-1 -right-1 w-3 h-3 border-t-2 border-r-2 border-[#854D0E]"></div>
-        <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b-2 border-l-2 border-[#854D0E]"></div>
-        <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b-2 border-r-2 border-[#854D0E]"></div>
+      <div className="absolute inset-x-8 top-32 bottom-12 border border-[#854D0E]/30 pointer-events-none rounded-2xl hidden lg:block">
+        <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-[#854D0E]"></div>
+        <div className="absolute -top-1 -right-1 w-4 h-4 border-t-2 border-r-2 border-[#854D0E]"></div>
+        <div className="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-[#854D0E]"></div>
+        <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-[#854D0E]"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="max-w-3xl">
+        
+        {/* Hero Glass Content Container for Supreme Text Contrast */}
+        <div className="max-w-3xl bg-white/90 sm:bg-white/85 backdrop-blur-xl p-6 sm:p-10 rounded-3xl border border-amber-300/60 shadow-2xl">
 
           {/* Eyebrow Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-amber-100/90 border border-amber-300 backdrop-blur-md mb-6 shadow-sm"
+            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-amber-100 border border-amber-300 backdrop-blur-md mb-6 shadow-sm"
           >
             <Sparkles className="w-4 h-4 text-[#854D0E] animate-pulse" />
-            <span className="text-xs sm:text-xs font-extrabold text-[#854D0E] tracking-widest uppercase">
+            <span className="text-xs font-black text-[#854D0E] tracking-widest uppercase">
               {HERO_DATA.eyebrow}
             </span>
           </motion.div>
@@ -73,7 +75,7 @@ export default function Hero({ onOpenQuote }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-lg sm:text-xl font-bold text-slate-800 mb-4"
+            className="text-lg sm:text-xl font-bold text-slate-900 mb-4"
           >
             {HERO_DATA.headingSub}
           </motion.p>
@@ -93,7 +95,7 @@ export default function Hero({ onOpenQuote }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="flex flex-wrap items-center gap-4 mb-10"
+            className="flex flex-wrap items-center gap-4 mb-8"
           >
             {/* Primary Action */}
             <a
@@ -108,7 +110,7 @@ export default function Hero({ onOpenQuote }) {
             {/* Quote Action */}
             <button
               onClick={onOpenQuote}
-              className="px-7 py-4 rounded-xl bg-white border-2 border-amber-500/40 text-slate-950 font-display font-extrabold text-sm tracking-wider uppercase hover:border-amber-600 hover:bg-amber-50 transition-all duration-300 shadow-sm"
+              className="px-7 py-4 rounded-xl bg-white border-2 border-amber-500/50 text-slate-950 font-display font-extrabold text-sm tracking-wider uppercase hover:border-amber-600 hover:bg-amber-50 transition-all duration-300 shadow-sm"
             >
               Get a Free Quote
             </button>
@@ -130,7 +132,7 @@ export default function Hero({ onOpenQuote }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-wrap items-center gap-6 pt-4 border-t border-slate-300/80"
+            className="flex flex-wrap items-center gap-6 pt-4 border-t border-slate-200"
           >
             <div className="flex items-center gap-2 text-xs font-bold text-slate-800">
               <ShieldCheck className="w-4 h-4 text-[#854D0E]" />
