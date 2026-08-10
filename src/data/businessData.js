@@ -197,6 +197,16 @@ export const PROJECTS_GALLERY = [
     isClientPhoto: true,
     location: "Melapalayam Commercial Site",
     details: "Skilled SUN Mats Works technicians applying custom adhesive and fitting vinyl surface mats and wallpapers."
+  },
+  {
+    id: "proj-9",
+    title: "Showroom Display & Sample Catalog Board Showcase",
+    category: "Floor Mats",
+    categorySlug: "floor-mats",
+    image: "./images/client_catalog_board.png",
+    isClientPhoto: true,
+    location: "Melapalayam Showroom",
+    details: "Authentic SUN Mats Works showroom display board showcasing vinyl patterns, rubber floor mats, and custom texture samples."
   }
 ];
 
