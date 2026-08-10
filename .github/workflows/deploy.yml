@@ -4,9 +4,6 @@ on:
   push:
     branches: ["main"]
 
-  # Allows manual triggering from Actions tab
-  workflow_dispatch:
-
 permissions:
   contents: read
   pages: write
@@ -30,19 +27,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Build production bundle
+      - name: Build site
         run: npm run build
 
-      - name: Setup Pages
-        uses: actions/configure-[#1]
-        uses: actions/configure-pages@v4
-
-      - name: Upload dist artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
